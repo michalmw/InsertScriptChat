@@ -1,0 +1,22 @@
+{
+  "name": "insertscriptchat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michalmw/InsertScriptChat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michalmw/InsertScriptChat/issues"
+  },
+  "homepage": "https://github.com/michalmw/InsertScriptChat#readme",
+  "dependencies": {
+    "webpack": "^3.10.0"
+  }
+}
