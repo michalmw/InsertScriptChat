@@ -17,7 +17,7 @@ document.body.innerHTML = `
         </div>
         <div class="chat-area"></div>
         <div class="input-bar">
-            <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
+            <textarea type="text" placeholder="wpisz tu i naciśnij enter" class="send-input"></textarea>
         </div>
     </div>
     <div class="container2 animate-up">
@@ -30,10 +30,10 @@ document.body.innerHTML = `
         </p>
         <input type="text" placeholder="nazwa" class="input-area__name">
         <input type="text" placeholder="adres" class="input-area__address">
-        <input type="text" placeholder="wiadomość" class="input-area__message">
+        <textarea rows="4" type="text" placeholder="wiadomość" class="input-area__message"></textarea>
       </div> 
       <div class="input-bar">
-        <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
+        <textarea type="text" placeholder="wpisz tu i naciśnij enter" class="send-input"></textarea>
       </div>
     </div>
   </div>
@@ -54,7 +54,9 @@ var sendInput = document.querySelector('.send-input')
 sendInput.addEventListener('keypress', (key) => {
     typing = sendInput.value;
     if (key.charCode == 13) {
-        addMessages()
+        addMessages();
+        if(key.preventDefault) event.preventDefault();
+        sendInput.value = '';
     }
 }, false)
 
@@ -63,7 +65,6 @@ var chatArea = document.querySelector('.chat-area');
 const addMessages = () => {
     let message = document.createElement('span');
     message.innerHTML = typing;
-    console.log('push force')
     message.classList = 'message';
     chatArea.appendChild(message);
     chatArea.scrollTop = chatArea.scrollHeight
