@@ -17,10 +17,13 @@ let chatContainer = `
 </div>
 <div class="chat-area"></div>
 <div class="input-bar">
+    <input type="file" placeholder="Plik" style="right:1" class="file-manager"></input>
     <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
 </div>
 </div>
+
 `
+
 let formContainer =
     `
     <div class="container" id="elementMoving">
@@ -46,6 +49,7 @@ let formContainer =
     </div>
   </div>
 `
+document.body.innerHTML = chatContainer
 
 const setComponent = () => { }
 
@@ -79,7 +83,7 @@ const setFunctionsToForm = () => {
     this.firstVal = false;
     this.nextVal = false;
     this.thirdVal = false;
-
+    
     this.sendLoginInformation = document.querySelector('.send-login-information');
 
     setValidate(this.name, (element) => {
@@ -120,36 +124,49 @@ const setFunctionsToForm = () => {
             console.log('uzupelnij poprawnie')
         }
     }, false)
+
 }
 
-setFunctionsToForm();
-
-document.body.innerHTML = formContainer
-
+// setFunctionsToForm();
 
 const setFunctionsToChat = () => {
     this.typing = ''
     this.sendInput = document.querySelector('.send-input')
+    this.fileManager = document.querySelector('.file-manager');
+    
+    console.log(this.sendInput)
     this.sendInput.addEventListener('keypress', (key) => {
-        this.typing = sendInput.value;
+        this.typing = this.sendInput.value;
         if (key.charCode == 13) {
             addMessages()
-            sendInput.value = '';
+            this.sendInput.value = '';
         }
     }, false)
+
+
+    this.fileManager.addEventListener('change', (event) => {
+        console.log(this.fileManager.value, 'even');
+    }, false)
+
+
 
     this.chatArea = document.querySelector('.chat-area');
 
     const addMessages = () => {
         let message = document.createElement('span');
-        message.innerHTML = typing;
-        console.log('push force')
+        message.innerHTML = this.typing;
         message.classList = 'message';
         this.chatArea.appendChild(message);
-        this.chatArea.scrollTop = chatArea.scrollHeight
+        this.chatArea.scrollTop = this.chatArea.scrollHeight
 
     }
 }
+
+setFunctionsToChat();
+
+
+
+
 
 const upButton = document.querySelector('.up-btn')
 upButton.addEventListener('click', () => {

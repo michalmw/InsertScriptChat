@@ -6,6 +6,8 @@
     --chat-area-font-color: grey;
 }
 
+
+
 .container {
     transition: 1s;
     position: fixed;
@@ -154,4 +156,11 @@ body {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+.send-login-information {
+    width:  100px;
+    height: 30px;
+    background-color: green;
 }
