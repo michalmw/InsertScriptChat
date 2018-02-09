@@ -13,6 +13,7 @@ document.body.innerHTML = `
 <body>
     <div class="container">
         <div class="first-bar">
+          <button class="up-setting">setting</button>
           <button class="up-btn">up</button>
         </div>
         <div class="chat-area"></div>

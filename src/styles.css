@@ -68,6 +68,12 @@
     top: 7px;
 }
 
+.up-setting {
+    border-radius: 100%;
+    position: absolute;
+    top: 7px;
+}
+
 .chat-area {
     overflow-y: auto;
     overflow-x: hidden;

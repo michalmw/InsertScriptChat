@@ -86,6 +86,7 @@ document.body.innerHTML = `
 <body>
     <div class="container">
         <div class="first-bar">
+          <button class="up-setting">setting</button>
           <button class="up-btn">up</button>
         </div>
         <div class="chat-area"></div>
@@ -121,6 +122,7 @@ var chatArea = document.querySelector('.chat-area');
 const addMessages =  () => {
     let message = document.createElement('span');
     message.innerHTML = typing; 
+    console.log('push force')
     message.classList = 'message';
     chatArea.appendChild(message);
     chatArea.scrollTop = chatArea.scrollHeight
@@ -200,7 +202,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\r\n:root {\r\n    --bars-color: blue;\r\n    --chat-area: white;\r\n}\r\n\r\n.container {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 5px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.container2 {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 328px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.animate-up {\r\n    bottom: 200px\r\n}\r\n\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: var(--bars-color);\r\n    position: relative;\r\n}\r\n.send-input {\r\n    width: 320px !important;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.message {\r\n    margin-left: 10px;\r\n    margin-right: 50px;\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n    background-color: #9CCC65;\r\n    display:block;\r\n    width: 300px !important;\r\n    word-wrap:break-word;\r\n}\r\n\r\n.up-btn {\r\n    border-radius: 100%;\r\n    width: 25px;\r\n    height: 25px;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 7px;\r\n}\r\n\r\n.chat-area {\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    background-color: var(--chat-area);\r\n    height: 210px;\r\n    width: 320px !important;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}", ""]);
+exports.push([module.i, "\r\n:root {\r\n    --bars-color: blue;\r\n    --chat-area: white;\r\n}\r\n\r\n.container {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 5px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.container2 {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 328px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.animate-up {\r\n    bottom: 200px\r\n}\r\n\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: var(--bars-color);\r\n    position: relative;\r\n}\r\n.send-input {\r\n    width: 320px !important;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.message {\r\n    margin-left: 10px;\r\n    margin-right: 50px;\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n    background-color: #9CCC65;\r\n    display:block;\r\n    width: 300px !important;\r\n    word-wrap:break-word;\r\n}\r\n\r\n.up-btn {\r\n    border-radius: 100%;\r\n    width: 25px;\r\n    height: 25px;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 7px;\r\n}\r\n\r\n.up-setting {\r\n    border-radius: 100%;\r\n    position: absolute;\r\n    top: 7px;\r\n}\r\n\r\n.chat-area {\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    background-color: var(--chat-area);\r\n    height: 210px;\r\n    width: 320px !important;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}", ""]);
 
 // exports
 
