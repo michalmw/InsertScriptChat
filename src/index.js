@@ -1,6 +1,5 @@
 
-import {bla} from './wtf'
-bla()
+
   // function component() {
   //   var element = document.createElement('div');
 
