@@ -11,7 +11,7 @@ import './styles.css'
 // }
 document.body.innerHTML = `
 <body>
-    <div class="container">
+    <div class="container" id="elementMoving">
         <div class="first-bar">
           <button class="up-btn">up</button>
         </div>
@@ -55,6 +55,7 @@ sendInput.addEventListener('keypress', (key) => {
     typing = sendInput.value;
     if (key.charCode == 13) {
         addMessages()
+        sendInput.value = '';
     }
 }, false)
 
@@ -67,6 +68,7 @@ const addMessages = () => {
     message.classList = 'message';
     chatArea.appendChild(message);
     chatArea.scrollTop = chatArea.scrollHeight
+
 }
 
 
@@ -116,8 +118,6 @@ upButton.addEventListener('click', () => {
 
 // const addListeners = (el) =>  el.addEventListener(type, fun, false);
 
-// addEventListener( barColor, )
-
 
 let style = getComputedStyle(document.body);
 const setColorVariables = (variable, value) => { document.documentElement.style.setProperty(variable, value); }
@@ -128,10 +128,57 @@ const setColorVariables = (variable, value) => { document.documentElement.style.
 // --chat-area-message-bg-color: green;
 // --chat-area-font-color: grey;
 
-setColorVariables('--bars-colors', 'red');
-setColorVariables('--chat-area-bg-color', 'green');
-setColorVariables('--chat-area-message-bg-color', '#8BC34A');
-setColorVariables('--chat-area-font-color', 'green');
+setColorVariables('--bars-colors', '4CAF50we');
+setColorVariables('--chat-area-bg-color', 'white');
+setColorVariables('--chat-area-message-bg-color', 'CDDC39');
+setColorVariables('--chat-area-font-color', '8BC34A');
+
+
+var speed = 10; // the box will move by 10 pixels on every step
+var direction = 1; // 1 = move right; -1 = move left
+
+var mouseX, mouseY = 0;
+
+const movingElement = document.querySelector('#elementMoving');
+
+// addEventListener(movingElement, 'onmousedown', fu)
+// document.addEventListener('mousemove', function (event) {
+//     var cX = event.clientX;
+//     var sX = event.screenX;
+//     var cY = event.clientY;
+//     var sY = event.screenY;
+//     mouseX = cX;
+//     mouseY = cY;
+//     var coords1 = "client - X: " + cX + ", Y coords: " + cY;
+//     var coords2 = "screen - X: " + sX + ", Y coords: " + sY;
+//     console.log(mouseX, mouseY)
+
+//     console.log(event);
+
+//     var boxLeftPos = movingElement.offsetLeft,
+//         boxRightPos = boxLeftPos + movingElement.offsetWidth;
+//     // When right side of the box goes too far - change direction:
+//     if (boxRightPos > document.body.offsetWidth) {
+//         direction = -1;
+//     }
+//     // When left side of the box goes too far - change direction:
+//     if (boxLeftPos < 0) {
+//         direction = 1;
+//     }
+//     // Recalculate position:
+//     movingElement.style.left = mouseX;
+//     movingElement.style.topwebpack = mouseY;
+// }, false)
+
+
+
+
+
+// movingElement.addEventListener('mousemove', function (event) {
+   
+// }, false)
+
+
 // console.log(style.getPropertyValue('--bars-color'));
 // console.log(style.getPropertyValue('--chat-area'));
 

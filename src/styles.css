@@ -82,7 +82,7 @@ input:placeholder, textarea:placeholder {
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
-    background-color: var(--chat-area-bg-color);
+    background-color: var(--chat-area-message-bg-color);
     display: block;
     width: 300px !important;
     word-wrap:break-word;

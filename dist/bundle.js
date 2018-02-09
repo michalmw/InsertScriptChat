@@ -84,7 +84,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // }
 document.body.innerHTML = `
 <body>
-    <div class="container">
+    <div class="container" id="elementMoving">
         <div class="first-bar">
           <button class="up-btn">up</button>
         </div>
@@ -106,7 +106,7 @@ document.body.innerHTML = `
         <input type="text" placeholder="wiadomość" class="input-area__message">
       </div> 
       <div class="input-bar">
-        <button class="send-button">Wyślij</button>
+        <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
       </div>
     </div>
   </div>
@@ -128,6 +128,7 @@ sendInput.addEventListener('keypress', (key) => {
     typing = sendInput.value;
     if (key.charCode == 13) {
         addMessages()
+        sendInput.value = '';
     }
 }, false)
 
@@ -140,6 +141,7 @@ const addMessages = () => {
     message.classList = 'message';
     chatArea.appendChild(message);
     chatArea.scrollTop = chatArea.scrollHeight
+
 }
 
 
@@ -185,11 +187,9 @@ upButton.addEventListener('click', () => {
 // }
 
 // var barColor = document.querySelector('#barsColor');
-// var messageColor = document.querySelector('#messageColor');
+// var messageColor = document.qgit pulluerySelector('#messageColor');
 
 // const addListeners = (el) =>  el.addEventListener(type, fun, false);
-
-// addEventListener( barColor, )
 
 
 let style = getComputedStyle(document.body);
@@ -201,10 +201,57 @@ const setColorVariables = (variable, value) => { document.documentElement.style.
 // --chat-area-message-bg-color: green;
 // --chat-area-font-color: grey;
 
-setColorVariables('--bars-colors', 'red');
-setColorVariables('--chat-area-bg-color', 'green');
-setColorVariables('--chat-area-message-bg-color', 'green');
-setColorVariables('--chat-area-font-color', 'green');
+setColorVariables('--bars-colors', '4CAF50we');
+setColorVariables('--chat-area-bg-color', 'white');
+setColorVariables('--chat-area-message-bg-color', 'CDDC39');
+setColorVariables('--chat-area-font-color', '8BC34A');
+
+
+var speed = 10; // the box will move by 10 pixels on every step
+var direction = 1; // 1 = move right; -1 = move left
+
+var mouseX, mouseY = 0;
+
+const movingElement = document.querySelector('#elementMoving');
+
+// addEventListener(movingElement, 'onmousedown', fu)
+document.addEventListener('mousemove', function (event) {
+    var cX = event.clientX;
+    var sX = event.screenX;
+    var cY = event.clientY;
+    var sY = event.screenY;
+    mouseX = cX;
+    mouseY = cY;
+    var coords1 = "client - X: " + cX + ", Y coords: " + cY;
+    var coords2 = "screen - X: " + sX + ", Y coords: " + sY;
+    console.log(mouseX, mouseY)
+
+    console.log(event);
+
+    var boxLeftPos = movingElement.offsetLeft,
+        boxRightPos = boxLeftPos + movingElement.offsetWidth;
+    // When right side of the box goes too far - change direction:
+    if (boxRightPos > document.body.offsetWidth) {
+        direction = -1;
+    }
+    // When left side of the box goes too far - change direction:
+    if (boxLeftPos < 0) {
+        direction = 1;
+    }
+    // Recalculate position:
+    movingElement.style.left = mouseX;
+    movingElement.style.topwebpack = mouseY;
+}, false)
+
+
+
+
+
+// movingElement.addEventListener('mousemove', function (event) {
+   
+// }, false)
+
+
 // console.log(style.getPropertyValue('--bars-color'));
 // console.log(style.getPropertyValue('--chat-area'));
 
@@ -269,7 +316,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\r\n:root {\r\n    --bars-color: purple;\r\n    --chat-area-bg-color: blue;\r\n    --chat-area-message-bg-color: green;\r\n    --chat-area-font-color: grey;\r\n}\r\n\r\n.container {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 5px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.container2 {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 328px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.animate-up {\r\n    bottom: 242px\r\n}\r\n\r\n.chat-area input, .chat-area textarea {\r\n    margin-left: 25px;\r\n    border-radius: 5px;\r\n    margin-top: 10px;\r\n    margin-bottom: 10px;\r\n    border: 1px solid grey;\r\n    height: 25px;\r\n    padding-left: 12px; \r\n    width: 270px;\r\n}\r\n\r\n.left-message-text {\r\n    font-size: 14px;\r\n    color: gray;\r\n    text-align: center;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\ninput:placeholder, textarea:placeholder {\r\n    color: gray;\r\n    font-weight: 400;\r\n}\r\n\r\n.input-area__message {\r\n    min-height: 50px;\r\n}\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: var(--bars-color);\r\n    position: relative;\r\n}\r\n.send-input {\r\n    width: 320px !important;\r\n    height: 45px;\r\n}\r\n\r\nbutton.send-button {\r\n    width: 100%;\r\n    background-color: blue;\r\n    color: white;\r\n    text-align: center;\r\n    font-size: 16px;\r\n    font-weight: 500;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.message {\r\n    margin-left: 10px;\r\n    margin-right: 50px;\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n    background-color: var(--chat-area-bg-color);\r\n    display: block;\r\n    width: 300px !important;\r\n    word-wrap:break-word;\r\n    color: var(--chat-area-font-color)\r\n}\r\n\r\n.up-btn {\r\n    border-radius: 100%;\r\n    width: 25px;\r\n    height: 25px;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 7px;\r\n}\r\n\r\n.up-setting {\r\n    border-radius: 100%;\r\n    position: absolute;\r\n    top: 7px;\r\n}\r\n\r\n.chat-area {\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    background-color: var(--chat-area-bg-color);\r\n    height: 250px;\r\n    width: 320px !important;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n.modal {\r\n    display: none; /* Hidden by default */\r\n    position: fixed; /* Stay in place */\r\n    z-index: 1; /* Sit on top */\r\n    padding-top: 100px; /* Location of the box */\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%; /* Full width */\r\n    height: 100%; /* Full height */\r\n    overflow: auto; /* Enable scroll if needed */\r\n    background-color: rgb(0,0,0); /* Fallback color */\r\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content {\r\n    background-color: #fefefe;\r\n    margin: auto;\r\n    padding: 20px;\r\n    border: 1px solid #888;\r\n    width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close {\r\n    color: #aaaaaa;\r\n    float: right;\r\n    font-size: 28px;\r\n    font-weight: bold;\r\n}\r\n\r\n.close:hover,\r\n.close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "\r\n:root {\r\n    --bars-color: purple;\r\n    --chat-area-bg-color: blue;\r\n    --chat-area-message-bg-color: green;\r\n    --chat-area-font-color: grey;\r\n}\r\n\r\n.container {\r\n    transition: 1s;\r\n    bottom: -60px;\r\n    right: 5px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.container2 {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 328px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.animate-up {\r\n    bottom: 242px\r\n}\r\n\r\n.chat-area input, .chat-area textarea {\r\n    margin-left: 25px;\r\n    border-radius: 5px;\r\n    margin-top: 10px;\r\n    margin-bottom: 10px;\r\n    border: 1px solid grey;\r\n    height: 25px;\r\n    padding-left: 12px; \r\n    width: 270px;\r\n}\r\n\r\n.left-message-text {\r\n    font-size: 14px;\r\n    color: gray;\r\n    text-align: center;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\ninput:placeholder, textarea:placeholder {\r\n    color: gray;\r\n    font-weight: 400;\r\n}\r\n\r\n.input-area__message {\r\n    min-height: 50px;\r\n}\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: var(--bars-color);\r\n    position: relative;\r\n}\r\n.send-input {\r\n    width: 320px !important;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.message {\r\n    margin-left: 10px;\r\n    margin-right: 50px;\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n    background-color: var(--chat-area-message-bg-color);\r\n    display: block;\r\n    width: 300px !important;\r\n    word-wrap:break-word;\r\n    color: var(--chat-area-font-color)\r\n}\r\n\r\n.up-btn {\r\n    border-radius: 100%;\r\n    width: 25px;\r\n    height: 25px;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 7px;\r\n}\r\n\r\n.up-setting {\r\n    border-radius: 100%;\r\n    position: absolute;\r\n    top: 7px;\r\n}\r\n\r\n.chat-area {\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    background-color: var(--chat-area-bg-color);\r\n    height: 250px;\r\n    width: 320px !important;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}\r\n\r\n\r\n.modal {\r\n    display: none; /* Hidden by default */\r\n    position: fixed; /* Stay in place */\r\n    z-index: 1; /* Sit on top */\r\n    padding-top: 100px; /* Location of the box */\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%; /* Full width */\r\n    height: 100%; /* Full height */\r\n    overflow: auto; /* Enable scroll if needed */\r\n    background-color: rgb(0,0,0); /* Fallback color */\r\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content {\r\n    background-color: #fefefe;\r\n    margin: auto;\r\n    padding: 20px;\r\n    border: 1px solid #888;\r\n    width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close {\r\n    color: #aaaaaa;\r\n    float: right;\r\n    font-size: 28px;\r\n    font-weight: bold;\r\n}\r\n\r\n.close:hover,\r\n.close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n}\r\n\r\n", ""]);
 
 // exports
 
