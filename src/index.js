@@ -36,14 +36,16 @@ let formContainer =
           Wypełnij proszę poniższe pola, a my skontaktujemy się z Tobą tak szybko jak będzie to możliwe..
         </p>
         <input type="text" placeholder="nazwa" class="input-area__name">
-        <small id="input-validator-name"> To pole jest wymagane i  3 znaki  </small>
+        <small id="input-validator-name" style="color: red"> To pole jest wymagane i  3 znaki  </small>
         <input type="text" placeholder="adres" class="input-area__address">
-        <small id="input-validator-address"> To pole jest wymagane </small>
+        <small id="input-validator-address" style="color: red"> Proszę podać poprawny email </small>
         <input type="text" placeholder="wiadomość" class="input-area__message">
-        <small id="input-validator-message"> To pole jest wymagane </small>
+        <small id="input-validator-message" style="color: red"> proszę podać wiadomosć </small>
+        <div style="text-align: center; display: block;">
+        <button placeholder="Wyślij" class="send-login-information">Wyślij</button>
+        </div>
       </div> 
       <div class="input-bar">
-        <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
       </div>
     </div>
   </div>
@@ -65,7 +67,6 @@ const setValidate = (element, validatioFun, smallVallidation) => {
     }, false)
 }
 
-
 const setFunctionsToForm = () => {
     this.nameVal = document.querySelector('#input-validator-name');
     this.addressVal = document.querySelector('#input-validator-address');
@@ -80,49 +81,52 @@ const setFunctionsToForm = () => {
     this.address = document.querySelector('.input-area__address');
     this.message = document.querySelector('.input-area__message');
 
+    this.firstVal = false;
+    this.nextVal = false;
+    this.thirdVal = false;
 
-    setValidate(this.name, function (element) {
+    console.log(this.firstVal, 'dsasasasasasasasasa')
+
+    this.sendLoginInformation = document.querySelector('.send-login-information');
+
+    setValidate(this.name, (element) => {
         if (element.value !== undefined && element.value.length > 3) {
+            this.firstVal = true;
             return true;
         }
+        this.firstVal = false;
         return false;
     }, this.nameVal);
 
-
-
-    this.address.addEventListener('focusin', (event) => {
-        this.addressVal.style.display = 'block';
-    }, false)
-
-    this.address.addEventListener('input', (event) => {
-        console.log(this.name.value)
-        if (!this.address.value !== undefined && this.address.value.length > 3) {
-            this.addressVal.style.display = 'none';
+    setValidate(this.address, (element) => {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (re.test(String(element.value).toLowerCase())) {
+            this.nextVal = true;
         } else {
-            this.addressVal.style.display = 'block';
+            this.nextVal = false;
+            return false;
+        }
+    }, this.addressVal);
+
+    setValidate(this.message, (element) => {
+        if (element.value !== undefined && element.value.length > 3) {
+            this.thirdVal = true;
+            return true;
+        } else {
+            this.thirdVal = false;
+        }
+        return false;
+    }, this.messageVal);
+
+    this.sendLoginInformation.addEventListener('click', () => {
+        console.log(this.firstVal, this.nextVal, this.thirdVal)
+        if (this.firstVal && this.nextVal && this.thirdVal) {
+            console.log('Can Send')
+        } else {
+            console.log('uzupelnij poprawnie')
         }
     }, false)
 
-
-
-
-    this.message.addEventListener('focusin', (event) => {
-        this.messageVal.style.display = 'block';
-    }, false)
-
-    this.message.addEventListener('input', (event) => {
-        console.log(this.name.value)
-        if (!this.message.value !== undefined && this.message.value.length > 3) {
-            this.messageVal.style.display = 'none';
-        } else {
-            this.messageVal.style.display = 'block';
-        }
-    }, false)
-
-
-
-
-    // console.log(this.name, this.address, this.message, '?')
 }
 
 setFunctionsToForm();
