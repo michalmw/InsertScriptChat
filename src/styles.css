@@ -28,6 +28,24 @@
     bottom: 200px
 }
 
+.chat-area input {
+    margin-left: 25px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid grey;
+    height: 25px;
+    padding-left: 12px; 
+}
+
+.left-message-text {
+    font-size: 18px;
+    color: gray;
+}
+.ichat-area input:placeholder {
+    color: gray;
+    font-weight: 400;
+}
 
 .first-bar {
     height: 40px;
