@@ -74,24 +74,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // function component() {
-  //   var element = document.createElement('div');
+//   var element = document.createElement('div');
 
-  //  // Lodash, currently included via a script, is required for this line to work
-  //  // Lodash, now imported by this script
-  //   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+//  // Lodash, currently included via a script, is required for this line to work
+//  // Lodash, now imported by this script
+//   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 
-  //   return element;
-  // }
+//   return element;
+// }
 document.body.innerHTML = `
 <body>
     <div class="container">
         <div class="first-bar"></div>
         <div class="chat-area"></div>
         <div class="input-bar">
+            <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
         </div>
     </div>
 </body>
 `
+
+
+var sendInput = document.querySelector('.send-input').addEventListener('keypress', (key) => {
+    console.log(event.charCode);
+    //if pressed enter
+    if (key.charCode == 13) {
+        console.log('send ing')
+    }
+
+
+}, false)
+
+
 
 
 
@@ -154,7 +168,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, ".container {\r\n    position: fixed;\r\n    bottom: 25px;\r\n    right: 10px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n}\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: blue;\r\n\r\n}\r\n\r\n.input-bar {\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n\r\n}\r\n\r\n\r\n.chat-area {\r\n    background-color: white;\r\n    height: 210px;\r\n    width: 320px;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n\r\n}", ""]);
+exports.push([module.i, ".container {\r\n    position: fixed;\r\n    bottom: 25px;\r\n    right: 10px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n}\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: blue;\r\n\r\n}\r\n.send-input {\r\n    width: 100%;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.chat-area {\r\n    background-color: white;\r\n    height: 210px;\r\n    width: 320px;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}", ""]);
 
 // exports
 
