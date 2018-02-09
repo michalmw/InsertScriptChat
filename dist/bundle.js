@@ -73,9 +73,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__styles_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__styles_css__);
 
 
-
-
-
 // function component() {
   //   var element = document.createElement('div');
 
@@ -85,11 +82,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   //   return element;
   // }
-
 document.body.innerHTML = `
 <body>
-<div class="container">
-</div>
+    <div class="container">
+        <div class="first-bar"></div>
+        <div class="chat-area"></div>
+        <div class="input-bar">
+        </div>
+    </div>
 </body>
 `
 
@@ -154,7 +154,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, ".container {\r\n    background-color: aqua;\r\n    width: 150px;\r\n    height: 400px;\r\n}", ""]);
+exports.push([module.i, ".container {\r\n    position: fixed;\r\n    bottom: 25px;\r\n    right: 10px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n}\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: blue;\r\n\r\n}\r\n\r\n.input-bar {\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n\r\n}\r\n\r\n\r\n.chat-area {\r\n    background-color: white;\r\n    height: 210px;\r\n    width: 320px;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n\r\n}", ""]);
 
 // exports
 

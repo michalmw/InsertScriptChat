@@ -11,8 +11,12 @@ import './styles.css'
   // }
 document.body.innerHTML = `
 <body>
-<div class="container">
-</div>
+    <div class="container">
+        <div class="first-bar"></div>
+        <div class="chat-area"></div>
+        <div class="input-bar">
+        </div>
+    </div>
 </body>
 `
 
