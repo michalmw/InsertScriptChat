@@ -9,18 +9,25 @@ import './styles.css'
 
 //   return element;
 // }
-document.body.innerHTML = `
-<body>
+
+
+let chatContainer = `
+<div class="container" id="elementMoving">
+<div class="first-bar">
+  <button class="up-btn">up</button>
+</div>
+<div class="chat-area"></div>
+<div class="input-bar">
+    <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
+</div>
+</div>
+
+`
+
+
+let formContainer = 
+`
     <div class="container" id="elementMoving">
-        <div class="first-bar">
-          <button class="up-btn">up</button>
-        </div>
-        <div class="chat-area"></div>
-        <div class="input-bar">
-            <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
-        </div>
-    </div>
-    <div class="container2 animate-up">
       <div class="first-bar">
         <button class="up-btn">up</button>
       </div>
@@ -37,18 +44,57 @@ document.body.innerHTML = `
       </div>
     </div>
   </div>
-
-  <div id="myModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <input id="messageColor" type="color"> Kolor wiadomosci</input>
-    <input id="barColor"type="color"> Kolor pasków</input>
-    <p>Some text in the Modal..</p> 
-  </div>
-
-</body>
 `
+
+document.body.innerHTML = formContainer
+
+
+
+
+
+
+
+// `
+// <body>
+//     <div class="container" id="elementMoving">
+//         <div class="first-bar">
+//           <button class="up-btn">up</button>
+//         </div>
+//         <div class="chat-area"></div>
+//         <div class="input-bar">
+//             <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
+//         </div>
+//     </div>
+//     <div class="container2 animate-up">
+//       <div class="first-bar">
+//         <button class="up-btn">up</button>
+//       </div>
+//       <div class="chat-area">
+//         <p class="left-message-text">
+//           Wypełnij proszę poniższe pola, a my skontaktujemy się z Tobą tak szybko jak będzie to możliwe..
+//         </p>
+//         <input type="text" placeholder="nazwa" class="input-area__name">
+//         <input type="text" placeholder="adres" class="input-area__address">
+//         <input type="text" placeholder="wiadomość" class="input-area__message">
+//       </div> 
+//       <div class="input-bar">
+//         <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
+//       </div>
+//     </div>
+//   </div>
+
+//   <div id="myModal" class="modal">
+//   <!-- Modal content -->
+//   <div class="modal-content">
+//     <span class="close">&times;</span>
+//     <input id="messageColor" type="color"> Kolor wiadomosci</input>
+//     <input id="barColor"type="color"> Kolor pasków</input>
+//     <p>Some text in the Modal..</p> 
+//   </div>
+
+// </body>
+// `
+
 var typing = ''
 var sendInput = document.querySelector('.send-input')
 sendInput.addEventListener('keypress', (key) => {
