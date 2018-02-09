@@ -25,14 +25,16 @@
 }
 
 .message {
-
+    text-justify: auto;
 }
 
 
 .chat-area {
+    overflow-y: auto;
+    overflow-x: hidden;
     background-color: white;
     height: 210px;
-    width: 320px;
+    width: 320px !important;
     border: 0.2px grey solid;
 }
 
