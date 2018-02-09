@@ -106,7 +106,7 @@ document.body.innerHTML = `
         <textarea rows="4" type="text" placeholder="wiadomość" class="input-area__message"></textarea>
       </div> 
       <div class="input-bar">
-        <textarea type="text" placeholder="wpisz tu i naciśnij enter" class="send-input"></textarea>
+        <button class="send-button">Wyślij</button>
       </div>
     </div>
   </div>

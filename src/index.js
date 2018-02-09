@@ -33,7 +33,7 @@ document.body.innerHTML = `
         <input type="text" placeholder="wiadomość" class="input-area__message">
       </div> 
       <div class="input-bar">
-        <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
+        <button class="send-button">Wyślij</button>
       </div>
     </div>
   </div>

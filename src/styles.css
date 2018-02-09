@@ -69,6 +69,16 @@ input:placeholder, textarea:placeholder {
     height: 45px;
 }
 
+button.send-button {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    height: 45px;
+}
+
 .input-bar {
     border-radius: 5px;
     min-height: 45px;
