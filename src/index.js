@@ -10,7 +10,6 @@ import './styles.css'
 //   return element;
 // }
 
-
 let chatContainer = `
 <div class="container" id="elementMoving">
 <div class="first-bar">
@@ -21,10 +20,7 @@ let chatContainer = `
     <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
 </div>
 </div>
-
 `
-
-
 let formContainer =
     `
     <div class="container" id="elementMoving">
@@ -50,7 +46,6 @@ let formContainer =
     </div>
   </div>
 `
-document.body.innerHTML = formContainer
 
 const setComponent = () => { }
 
@@ -84,8 +79,6 @@ const setFunctionsToForm = () => {
     this.firstVal = false;
     this.nextVal = false;
     this.thirdVal = false;
-
-    console.log(this.firstVal, 'dsasasasasasasasasa')
 
     this.sendLoginInformation = document.querySelector('.send-login-information');
 
@@ -127,11 +120,11 @@ const setFunctionsToForm = () => {
             console.log('uzupelnij poprawnie')
         }
     }, false)
-
 }
 
 setFunctionsToForm();
 
+document.body.innerHTML = formContainer
 
 
 const setFunctionsToChat = () => {
@@ -158,51 +151,6 @@ const setFunctionsToChat = () => {
     }
 }
 
-
-
-// `
-// <body>
-//     <div class="container" id="elementMoving">
-//         <div class="first-bar">
-//           <button class="up-btn">up</button>
-//         </div>
-//         <div class="chat-area"></div>
-//         <div class="input-bar">
-//             <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
-//         </div>
-//     </div>
-//     <div class="container2 animate-up">
-//       <div class="first-bar">
-//         <button class="up-btn">up</button>
-//       </div>
-//       <div class="chat-area">
-//         <p class="left-message-text">
-//           Wypełnij proszę poniższe pola, a my skontaktujemy się z Tobą tak szybko jak będzie to możliwe..
-//         </p>
-//         <input type="text" placeholder="nazwa" class="input-area__name">
-//         <input type="text" placeholder="adres" class="input-area__address">
-//         <input type="text" placeholder="wiadomość" class="input-area__message">
-//       </div> 
-//       <div class="input-bar">
-//         <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
-//       </div>
-//     </div>
-//   </div>
-
-//   <div id="myModal" class="modal">
-//   <!-- Modal content -->
-//   <div class="modal-content">
-//     <span class="close">&times;</span>
-//     <input id="messageColor" type="color"> Kolor wiadomosci</input>
-//     <input id="barColor"type="color"> Kolor pasków</input>
-//     <p>Some text in the Modal..</p> 
-//   </div>
-
-// </body>
-// `
-
-
-
 const upButton = document.querySelector('.up-btn')
 upButton.addEventListener('click', () => {
     const container = document.querySelector('.container')
@@ -213,49 +161,8 @@ upButton.addEventListener('click', () => {
     }
 })
 
-
-
-
-// // Get the modal
-// var modal = document.getElementById('myModal');
-
-// // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
-
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-
-// // When the user clicks the button, open the modal 
-// btn.onclick = function () {
-//     modal.style.display = "block";
-// }
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function () {
-//     modal.style.display = "none";
-// }
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function (event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//     }
-// }
-
-// var barColor = document.querySelector('#barsColor');
-// var messageColor = document.qgit pulluerySelector('#messageColor');
-
-// const addListeners = (el) =>  el.addEventListener(type, fun, false);
-
-
 let style = getComputedStyle(document.body);
 const setColorVariables = (variable, value) => { document.documentElement.style.setProperty(variable, value); }
-
-
-// --bars-color: purple;
-// --chat-area-bg-color: blue;
-// --chat-area-message-bg-color: green;
-// --chat-area-font-color: grey;
 
 setColorVariables('--bars-colors', '4CAF50we');
 setColorVariables('--chat-area-bg-color', 'white');
@@ -265,9 +172,7 @@ setColorVariables('--chat-area-font-color', '8BC34A');
 
 var speed = 10; // the box will move by 10 pixels on every step
 var direction = 1; // 1 = move right; -1 = move left
-
 var mouseX, mouseY = 0;
-
 const movingElement = document.querySelector('#elementMoving');
 
 // addEventListener(movingElement, 'onmousedown', fu)
