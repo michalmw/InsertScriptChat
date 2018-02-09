@@ -95,15 +95,24 @@ document.body.innerHTML = `
 `
 
 
-var sendInput = document.querySelector('.send-input').addEventListener('keypress', (key) => {
-    console.log(event.charCode);
-    //if pressed enter
+var typing = ''
+
+var sendInput = document.querySelector('.send-input')
+sendInput.addEventListener('keypress', (key) => {
+    typing = sendInput.value;
     if (key.charCode == 13) {
-        console.log('send ing')
+        console.log('send ing', typing)
     }
-
-
 }, false)
+
+
+var chatArea = document.querySelector('chat-area');
+
+ const addMessages =  () => {
+    let message = document.createElement('div')
+
+ }
+
 
 
 
