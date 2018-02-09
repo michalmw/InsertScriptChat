@@ -1,7 +1,9 @@
 
 :root {
-    --bars-color: blue;
-    --chat-area: white;
+    --bars-color: purple;
+    --chat-area-bg-color: blue;
+    --chat-area-message-bg-color: green;
+    --chat-area-font-color: grey;
 }
 
 .container {
@@ -80,10 +82,11 @@ input:placeholder, textarea:placeholder {
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
-    background-color: var(--chat-area);
+    background-color: var(--chat-area-bg-color);
     display: block;
     width: 300px !important;
     word-wrap:break-word;
+    color: var(--chat-area-font-color)
 }
 
 .up-btn {
@@ -104,7 +107,7 @@ input:placeholder, textarea:placeholder {
 .chat-area {
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: var(--chat-area);
+    background-color: var(--chat-area-bg-color);
     height: 250px;
     width: 320px !important;
     border: 0.2px grey solid;

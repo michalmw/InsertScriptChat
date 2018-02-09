@@ -17,7 +17,7 @@ document.body.innerHTML = `
         </div>
         <div class="chat-area"></div>
         <div class="input-bar">
-            <textarea type="text" placeholder="wpisz tu i naciśnij enter" class="send-input"></textarea>
+            <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
         </div>
     </div>
     <div class="container2 animate-up">
@@ -30,10 +30,10 @@ document.body.innerHTML = `
         </p>
         <input type="text" placeholder="nazwa" class="input-area__name">
         <input type="text" placeholder="adres" class="input-area__address">
-        <textarea rows="4" type="text" placeholder="wiadomość" class="input-area__message"></textarea>
+        <input type="text" placeholder="wiadomość" class="input-area__message">
       </div> 
       <div class="input-bar">
-        <textarea type="text" placeholder="wpisz tu i naciśnij enter" class="send-input"></textarea>
+        <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
       </div>
     </div>
   </div>
@@ -54,9 +54,7 @@ var sendInput = document.querySelector('.send-input')
 sendInput.addEventListener('keypress', (key) => {
     typing = sendInput.value;
     if (key.charCode == 13) {
-        addMessages();
-        if(key.preventDefault) event.preventDefault();
-        sendInput.value = '';
+        addMessages()
     }
 }, false)
 
@@ -65,6 +63,7 @@ var chatArea = document.querySelector('.chat-area');
 const addMessages = () => {
     let message = document.createElement('span');
     message.innerHTML = typing;
+    console.log('push force')
     message.classList = 'message';
     chatArea.appendChild(message);
     chatArea.scrollTop = chatArea.scrollHeight
@@ -124,13 +123,15 @@ let style = getComputedStyle(document.body);
 const setColorVariables = (variable, value) => { document.documentElement.style.setProperty(variable, value); }
 
 
+// --bars-color: purple;
+// --chat-area-bg-color: blue;
+// --chat-area-message-bg-color: green;
+// --chat-area-font-color: grey;
+
 setColorVariables('--bars-colors', 'red');
-setColorVariables('--chat-area', 'green');
-
-
-
-
-
+setColorVariables('--chat-area-bg-color', 'green');
+setColorVariables('--chat-area-message-bg-color', 'green');
+setColorVariables('--chat-area-font-color', 'green');
 // console.log(style.getPropertyValue('--bars-color'));
 // console.log(style.getPropertyValue('--chat-area'));
 
