@@ -33,7 +33,7 @@ document.body.innerHTML = `
         <input type="text" placeholder="wiadomość" class="input-area__message">
       </div> 
       <div class="input-bar">
-        <button class="send-button">Wyślij</button>
+        <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
       </div>
     </div>
   </div>
@@ -112,7 +112,7 @@ upButton.addEventListener('click', () => {
 // }
 
 // var barColor = document.querySelector('#barsColor');
-// var messageColor = document.querySelector('#messageColor');
+// var messageColor = document.qgit pulluerySelector('#messageColor');
 
 // const addListeners = (el) =>  el.addEventListener(type, fun, false);
 
@@ -130,7 +130,7 @@ const setColorVariables = (variable, value) => { document.documentElement.style.
 
 setColorVariables('--bars-colors', 'red');
 setColorVariables('--chat-area-bg-color', 'green');
-setColorVariables('--chat-area-message-bg-color', 'green');
+setColorVariables('--chat-area-message-bg-color', '#8BC34A');
 setColorVariables('--chat-area-font-color', 'green');
 // console.log(style.getPropertyValue('--bars-color'));
 // console.log(style.getPropertyValue('--chat-area'));
