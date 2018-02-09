@@ -109,10 +109,18 @@ document.body.innerHTML = `
       <div class="first-bar">
         <button class="up-btn">up</button>
       </div>
-      <div class="chat-area"></div>
+      <div class="chat-area">
+        <p class="left-message-text">
+          Wypełnij proszę poniższe pola, a my skontaktujemy się z Tobą tak szybko jak będzie to możliwe..
+        </p>
+        <input type="text" placeholder="nazwa" class="input-area__name">
+        <input type="text" placeholder="adres" class="input-area__address">
+        <input type="text" placeholder="wiadomość" class="input-area__message">
+      </div> 
       <div class="input-bar">
-          <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
+        <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
       </div>
+    </div>
   </div>
 </body>
 `
@@ -129,7 +137,7 @@ var chatArea = document.querySelector('.chat-area');
 
 const addMessages = () => {
     let message = document.createElement('span');
-    message.innerHTML = typing;
+    message.innerHTML = typing; 
     console.log('push force')
     message.classList = 'message';
     chatArea.appendChild(message);
@@ -234,7 +242,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\r\n:root {\r\n    --bars-color: blue;\r\n    --chat-area: white;\r\n}\r\n\r\n.container {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 5px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.container2 {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 328px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.animate-up {\r\n    bottom: 200px\r\n}\r\n\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: var(--bars-color);\r\n    position: relative;\r\n}\r\n.send-input {\r\n    width: 320px !important;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.message {\r\n    margin-left: 10px;\r\n    margin-right: 50px;\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n    background-color: #9CCC65;\r\n    display:block;\r\n    width: 300px !important;\r\n    word-wrap:break-word;\r\n}\r\n\r\n\r\n\r\n\r\n.up-btn {\r\n    border-radius: 100%;\r\n    width: 25px;\r\n    height: 25px;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 7px;\r\n}\r\n\r\n.up-setting {\r\n    border-radius: 100%;\r\n    position: absolute;\r\n    top: 7px;\r\n}\r\n\r\n.chat-area {\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    background-color: var(--chat-area);\r\n    height: 210px;\r\n    width: 320px !important;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n.modal {\r\n    display: none; /* Hidden by default */\r\n    position: fixed; /* Stay in place */\r\n    z-index: 1; /* Sit on top */\r\n    padding-top: 100px; /* Location of the box */\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%; /* Full width */\r\n    height: 100%; /* Full height */\r\n    overflow: auto; /* Enable scroll if needed */\r\n    background-color: rgb(0,0,0); /* Fallback color */\r\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content {\r\n    background-color: #fefefe;\r\n    margin: auto;\r\n    padding: 20px;\r\n    border: 1px solid #888;\r\n    width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close {\r\n    color: #aaaaaa;\r\n    float: right;\r\n    font-size: 28px;\r\n    font-weight: bold;\r\n}\r\n\r\n.close:hover,\r\n.close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "\r\n:root {\r\n    --bars-color: blue;\r\n    --chat-area: white;\r\n}\r\n\r\n.container {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 5px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.container2 {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 328px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.animate-up {\r\n    bottom: 200px\r\n}\r\n\r\n.chat-area input {\r\n    margin-left: 25px;\r\n    border-radius: 5px;\r\n    margin-top: 10px;\r\n    margin-bottom: 10px;\r\n    border: 1px solid grey;\r\n    height: 25px;\r\n    padding-left: 12px; \r\n}\r\n\r\n.left-message-text {\r\n    font-size: 18px;\r\n    color: gray;\r\n}\r\n.ichat-area input:placeholder {\r\n    color: gray;\r\n    font-weight: 400;\r\n}\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: var(--bars-color);\r\n    position: relative;\r\n}\r\n.send-input {\r\n    width: 320px !important;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.message {\r\n    margin-left: 10px;\r\n    margin-right: 50px;\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n    background-color: #9CCC65;\r\n    display:block;\r\n    width: 300px !important;\r\n    word-wrap:break-word;\r\n}\r\n\r\n.up-btn {\r\n    border-radius: 100%;\r\n    width: 25px;\r\n    height: 25px;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 7px;\r\n}\r\n\r\n.chat-area {\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    background-color: var(--chat-area);\r\n    height: 210px;\r\n    width: 320px !important;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}", ""]);
 
 // exports
 

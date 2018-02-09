@@ -36,10 +36,18 @@ document.body.innerHTML = `
       <div class="first-bar">
         <button class="up-btn">up</button>
       </div>
-      <div class="chat-area"></div>
+      <div class="chat-area">
+        <p class="left-message-text">
+          Wypełnij proszę poniższe pola, a my skontaktujemy się z Tobą tak szybko jak będzie to możliwe..
+        </p>
+        <input type="text" placeholder="nazwa" class="input-area__name">
+        <input type="text" placeholder="adres" class="input-area__address">
+        <input type="text" placeholder="wiadomość" class="input-area__message">
+      </div> 
       <div class="input-bar">
-          <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
+        <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
       </div>
+    </div>
   </div>
 </body>
 `
