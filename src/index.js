@@ -1,6 +1,6 @@
+import './styles.css'
 
-
-  // function component() {
+// function component() {
   //   var element = document.createElement('div');
 
   //  // Lodash, currently included via a script, is required for this line to work
@@ -9,5 +9,10 @@
 
   //   return element;
   // }
+document.body.innerHTML = `
+<body>
+<div class="container">
+</div>
+</body>
+`
 
-  document.body.appendChild(component());
