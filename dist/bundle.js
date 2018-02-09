@@ -65,21 +65,35 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./style.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-var Content = __webpack_require__(1);
-var content = new Content();
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__wtf__ = __webpack_require__(1);
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__wtf__["a" /* bla */])()
+  function component() {
+    var element = document.createElement('div');
+
+   // Lodash, currently included via a script, is required for this line to work
+   // Lodash, now imported by this script
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+
+    return element;
+  }
+
+  document.body.appendChild(component());
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-function Content() {
-    console.log('Merixstudio');
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = bla;
+function bla (){
+ console.log('hello world`')
 }
-
-module.exports = Content;
 
 /***/ })
 /******/ ]);
