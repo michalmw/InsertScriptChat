@@ -20,6 +20,15 @@ document.body.innerHTML = `
             <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
         </div>
     </div>
+    <div class="container2 animate-up">
+      <div class="first-bar">
+        <button class="up-btn">up</button>
+      </div>
+      <div class="chat-area"></div>
+      <div class="input-bar">
+          <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
+      </div>
+  </div>
 </body>
 `
 

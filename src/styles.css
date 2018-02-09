@@ -8,12 +8,20 @@
     transition: 1s;
     position: fixed;
     bottom: -60px;
-    right: 225px;
+    right: 5px;
     background-color: aqua;
     width: 320px;
-    width: 100px;
     height: 100px;
-    background: red;
+}
+
+.container2 {
+    transition: 1s;
+    position: fixed;
+    bottom: -60px;
+    right: 328px;
+    background-color: aqua;
+    width: 320px;
+    height: 100px;
 }
 
 .animate-up {
