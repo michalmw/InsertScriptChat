@@ -51,6 +51,9 @@ let formContainer =
 `
 document.body.innerHTML = chatContainer
 
+
+console.log('a')
+
 const setComponent = () => { }
 
 const setValidate = (element, validatioFun, smallVallidation) => {
