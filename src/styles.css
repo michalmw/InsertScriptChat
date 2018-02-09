@@ -1,3 +1,9 @@
+
+:root {
+    --bars-color: blue;
+    --chat-area: white;
+}
+
 .container {
     transition: 1s;
     position: fixed;
@@ -18,7 +24,7 @@
 .first-bar {
     height: 40px;
     width: 320px;
-    background-color: blue;
+    background-color: var(--bars-color);
     position: relative;
 }
 .send-input {
@@ -57,7 +63,7 @@
 .chat-area {
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: white;
+    background-color: var(--chat-area);
     height: 210px;
     width: 320px !important;
     border: 0.2px grey solid;
