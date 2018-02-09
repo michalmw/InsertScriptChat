@@ -69,6 +69,9 @@ const addMessages = () => {
     chatArea.scrollTop = chatArea.scrollHeight
 }
 
+
+
+
 const upButton = document.querySelector('.up-btn')
 upButton.addEventListener('click', () => {
     const container = document.querySelector('.container')
@@ -114,3 +117,19 @@ upButton.addEventListener('click', () => {
 // const addListeners = (el) =>  el.addEventListener(type, fun, false);
 
 // addEventListener( barColor, )
+
+
+let style = getComputedStyle(document.body);
+const setColorVariables = (variable, value) => { document.documentElement.style.setProperty(variable, value); }
+
+
+setColorVariables('--bars-colors', 'red');
+setColorVariables('--chat-area', 'green');
+
+
+
+
+
+// console.log(style.getPropertyValue('--bars-color'));
+// console.log(style.getPropertyValue('--chat-area'));
+

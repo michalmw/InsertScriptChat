@@ -71,8 +71,8 @@
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
-    background-color: #9CCC65;
-    display:block;
+    background-color: var(--chat-area);
+    display: block;
     width: 300px !important;
     word-wrap:break-word;
 }
