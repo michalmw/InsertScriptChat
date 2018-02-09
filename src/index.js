@@ -11,12 +11,14 @@ import './styles.css'
 // }
 document.body.innerHTML = `
 <body>
+<button id="myBtn">Open Modal</button>
+
 <div id="myModal" class="modal">
 <button id="myBtn">Open Modal</button>
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
+    <p>Some text in the Modal..dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
   </div>
     <div class="container">
         <div class="first-bar">

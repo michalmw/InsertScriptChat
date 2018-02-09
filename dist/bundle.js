@@ -84,6 +84,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // }
 document.body.innerHTML = `
 <body>
+<button id="myBtn">Open Modal</button>
+
+<div id="myModal" class="modal">
+<button id="myBtn">Open Modal</button>
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+  </div>
     <div class="container">
         <div class="first-bar">
           <button class="up-setting">setting</button>
@@ -105,9 +114,6 @@ document.body.innerHTML = `
   </div>
 </body>
 `
-
-
-
 var typing = ''
 var sendInput = document.querySelector('.send-input')
 sendInput.addEventListener('keypress', (key) => {
@@ -118,30 +124,54 @@ sendInput.addEventListener('keypress', (key) => {
 }, false)
 
 var chatArea = document.querySelector('.chat-area');
- 
-const addMessages =  () => {
+
+const addMessages = () => {
     let message = document.createElement('span');
-    message.innerHTML = typing; 
+    message.innerHTML = typing;
     console.log('push force')
     message.classList = 'message';
     chatArea.appendChild(message);
     chatArea.scrollTop = chatArea.scrollHeight
- }
+}
 
 const upButton = document.querySelector('.up-btn')
-upButton.addEventListener('click', ()=> {
-  const container = document.querySelector('.container')
-  if (container.classList.contains('animate-up')) {
-    container.classList.remove('animate-up')
-  } else {
-    container.classList.add('animate-up')
-  }
+upButton.addEventListener('click', () => {
+    const container = document.querySelector('.container')
+    if (container.classList.contains('animate-up')) {
+        container.classList.remove('animate-up')
+    } else {
+        container.classList.add('animate-up')
+    }
 })
 
 
 
 
+// Get the modal
+var modal = document.getElementById('myModal');
 
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 /***/ }),
 /* 1 */
@@ -202,7 +232,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\r\n:root {\r\n    --bars-color: blue;\r\n    --chat-area: white;\r\n}\r\n\r\n.container {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 5px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.container2 {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 328px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.animate-up {\r\n    bottom: 200px\r\n}\r\n\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: var(--bars-color);\r\n    position: relative;\r\n}\r\n.send-input {\r\n    width: 320px !important;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.message {\r\n    margin-left: 10px;\r\n    margin-right: 50px;\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n    background-color: #9CCC65;\r\n    display:block;\r\n    width: 300px !important;\r\n    word-wrap:break-word;\r\n}\r\n\r\n.up-btn {\r\n    border-radius: 100%;\r\n    width: 25px;\r\n    height: 25px;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 7px;\r\n}\r\n\r\n.up-setting {\r\n    border-radius: 100%;\r\n    position: absolute;\r\n    top: 7px;\r\n}\r\n\r\n.chat-area {\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    background-color: var(--chat-area);\r\n    height: 210px;\r\n    width: 320px !important;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}", ""]);
+exports.push([module.i, "\r\n:root {\r\n    --bars-color: blue;\r\n    --chat-area: white;\r\n}\r\n\r\n.container {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 5px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.container2 {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 328px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.animate-up {\r\n    bottom: 200px\r\n}\r\n\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: var(--bars-color);\r\n    position: relative;\r\n}\r\n.send-input {\r\n    width: 320px !important;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.message {\r\n    margin-left: 10px;\r\n    margin-right: 50px;\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n    background-color: #9CCC65;\r\n    display:block;\r\n    width: 300px !important;\r\n    word-wrap:break-word;\r\n}\r\n\r\n\r\n\r\n\r\n.up-btn {\r\n    border-radius: 100%;\r\n    width: 25px;\r\n    height: 25px;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 7px;\r\n}\r\n\r\n.up-setting {\r\n    border-radius: 100%;\r\n    position: absolute;\r\n    top: 7px;\r\n}\r\n\r\n.chat-area {\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    background-color: var(--chat-area);\r\n    height: 210px;\r\n    width: 320px !important;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n.modal {\r\n    display: none; /* Hidden by default */\r\n    position: fixed; /* Stay in place */\r\n    z-index: 1; /* Sit on top */\r\n    padding-top: 100px; /* Location of the box */\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%; /* Full width */\r\n    height: 100%; /* Full height */\r\n    overflow: auto; /* Enable scroll if needed */\r\n    background-color: rgb(0,0,0); /* Fallback color */\r\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content {\r\n    background-color: #fefefe;\r\n    margin: auto;\r\n    padding: 20px;\r\n    border: 1px solid #888;\r\n    width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close {\r\n    color: #aaaaaa;\r\n    float: right;\r\n    font-size: 28px;\r\n    font-weight: bold;\r\n}\r\n\r\n.close:hover,\r\n.close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n}\r\n\r\n", ""]);
 
 // exports
 
