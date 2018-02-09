@@ -170,7 +170,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, ".container {\r\n    position: fixed;\r\n    bottom: 25px;\r\n    right: 10px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n}\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: blue;\r\n\r\n}\r\n.send-input {\r\n    width: 100%;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.chat-area {\r\n    background-color: white;\r\n    height: 210px;\r\n    width: 320px;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}", ""]);
+exports.push([module.i, ".container {\r\n    position: fixed;\r\n    bottom: 25px;\r\n    right: 10px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n}\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: blue;\r\n\r\n}\r\n.send-input {\r\n    width: 100%;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.message {\r\n\r\n}\r\n\r\n\r\n.chat-area {\r\n    background-color: white;\r\n    height: 210px;\r\n    width: 320px;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}", ""]);
 
 // exports
 
