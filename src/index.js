@@ -25,8 +25,8 @@ let chatContainer = `
 `
 
 
-let formContainer = 
-`
+let formContainer =
+    `
     <div class="container" id="elementMoving">
       <div class="first-bar">
         <button class="up-btn">up</button>
@@ -36,8 +36,11 @@ let formContainer =
           Wypełnij proszę poniższe pola, a my skontaktujemy się z Tobą tak szybko jak będzie to możliwe..
         </p>
         <input type="text" placeholder="nazwa" class="input-area__name">
+        <small id="input-validator-name"> To pole jest wymagane i  3 znaki  </small>
         <input type="text" placeholder="adres" class="input-area__address">
+        <small id="input-validator-address"> To pole jest wymagane </small>
         <input type="text" placeholder="wiadomość" class="input-area__message">
+        <small id="input-validator-message"> To pole jest wymagane </small>
       </div> 
       <div class="input-bar">
         <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
@@ -45,12 +48,104 @@ let formContainer =
     </div>
   </div>
 `
-
 document.body.innerHTML = formContainer
 
+const setComponent = () => { }
 
 
 
+
+const setFunctionsToForm = () => {
+    this.nameVal = document.querySelector('#input-validator-name');
+    this.addressVal = document.querySelector('#input-validator-address');
+    this.messageVal = document.querySelector('#input-validator-message');
+
+    this.nameVal.style.display = 'none';
+    this.addressVal.style.display = 'none';
+    this.messageVal.style.display = 'none';
+
+    this.chatArea = document.querySelector('.chat-area');
+    this.name = document.querySelector('.input-area__name');
+    this.address = document.querySelector('.input-area__address');
+    this.message = document.querySelector('.input-area__message');
+
+    this.name.addEventListener('focusin', (event) => {
+        this.nameVal.style.display = 'block';
+    }, false)
+
+    this.name.addEventListener('input', (event) => {
+        console.log(this.name.value)
+        if (!this.name.value !== undefined && this.name.value.length > 3) {
+            this.nameVal.style.display = 'none';
+        } else {
+            this.nameVal.style.display = 'block';
+        }
+    }, false)
+
+
+    
+    this.address.addEventListener('focusin', (event) => {
+        this.addressVal.style.display = 'block';
+    }, false)
+
+    this.address.addEventListener('input', (event) => {
+        console.log(this.name.value)
+        if (!this.address.value !== undefined && this.address.value.length > 3) {
+            this.addressVal.style.display = 'none';
+        } else {
+            this.addressVal.style.display = 'block';
+        }
+    }, false)
+
+
+
+    
+    this.message.addEventListener('focusin', (event) => {
+        this.messageVal.style.display = 'block';
+    }, false)
+
+    this.message.addEventListener('input', (event) => {
+        console.log(this.name.value)
+        if (!this.message.value !== undefined && this.message.value.length > 3) {
+            this.messageVal.style.display = 'none';
+        } else {
+            this.messageVal.style.display = 'block';
+        }
+    }, false)
+
+
+
+
+    // console.log(this.name, this.address, this.message, '?')
+}
+
+setFunctionsToForm();
+
+
+
+const setFunctionsToChat = () => {
+    this.typing = ''
+    this.sendInput = document.querySelector('.send-input')
+    this.sendInput.addEventListener('keypress', (key) => {
+        this.typing = sendInput.value;
+        if (key.charCode == 13) {
+            addMessages()
+            sendInput.value = '';
+        }
+    }, false)
+
+    this.chatArea = document.querySelector('.chat-area');
+
+    const addMessages = () => {
+        let message = document.createElement('span');
+        message.innerHTML = typing;
+        console.log('push force')
+        message.classList = 'message';
+        this.chatArea.appendChild(message);
+        this.chatArea.scrollTop = chatArea.scrollHeight
+
+    }
+}
 
 
 
@@ -94,29 +189,6 @@ document.body.innerHTML = formContainer
 
 // </body>
 // `
-
-var typing = ''
-var sendInput = document.querySelector('.send-input')
-sendInput.addEventListener('keypress', (key) => {
-    typing = sendInput.value;
-    if (key.charCode == 13) {
-        addMessages()
-        sendInput.value = '';
-    }
-}, false)
-
-var chatArea = document.querySelector('.chat-area');
-
-const addMessages = () => {
-    let message = document.createElement('span');
-    message.innerHTML = typing;
-    console.log('push force')
-    message.classList = 'message';
-    chatArea.appendChild(message);
-    chatArea.scrollTop = chatArea.scrollHeight
-
-}
-
 
 
 
@@ -221,7 +293,7 @@ const movingElement = document.querySelector('#elementMoving');
 
 
 // movingElement.addEventListener('mousemove', function (event) {
-   
+
 // }, false)
 
 
