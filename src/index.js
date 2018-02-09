@@ -48,6 +48,7 @@ var chatArea = document.querySelector('.chat-area');
 const addMessages =  () => {
     let message = document.createElement('span');
     message.innerHTML = typing; 
+    console.log('push force')
     message.classList = 'message';
     chatArea.appendChild(message);
     chatArea.scrollTop = chatArea.scrollHeight
