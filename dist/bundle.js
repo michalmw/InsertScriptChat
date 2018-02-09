@@ -128,6 +128,21 @@ const setComponent = () => { }
 
 
 
+const setValidate = (element, validatioFun, smallVallidation) => {
+    console.log(element, validatioFun, smallVallidation)
+    element.addEventListener('input', (event) => {
+        if (validatioFun(element)) {
+            smallVallidation.style.display = 'none';
+        } else {
+            smallVallidation.style.display = 'block';
+        }
+    }, false)
+    element.addEventListener('focusin', (event) => {
+        smallVallidation.style.display = 'block';
+    }, false)
+}
+
+
 const setFunctionsToForm = () => {
     this.nameVal = document.querySelector('#input-validator-name');
     this.addressVal = document.querySelector('#input-validator-address');
@@ -142,21 +157,16 @@ const setFunctionsToForm = () => {
     this.address = document.querySelector('.input-area__address');
     this.message = document.querySelector('.input-area__message');
 
-    this.name.addEventListener('focusin', (event) => {
-        this.nameVal.style.display = 'block';
-    }, false)
 
-    this.name.addEventListener('input', (event) => {
-        console.log(this.name.value)
-        if (!this.name.value !== undefined && this.name.value.length > 3) {
-            this.nameVal.style.display = 'none';
-        } else {
-            this.nameVal.style.display = 'block';
+    setValidate(this.name, function (element) {
+        if (element.value !== undefined && element.value.length > 3) {
+            return true;
         }
-    }, false)
+        return false;
+    }, this.nameVal);
 
 
-    
+
     this.address.addEventListener('focusin', (event) => {
         this.addressVal.style.display = 'block';
     }, false)
@@ -172,7 +182,7 @@ const setFunctionsToForm = () => {
 
 
 
-    
+
     this.message.addEventListener('focusin', (event) => {
         this.messageVal.style.display = 'block';
     }, false)
