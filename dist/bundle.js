@@ -110,8 +110,11 @@ const addMessages =  () => {
     console.log(message)
     message.innerHTML = typing; 
     message.classList = 'message';
+
     chatArea.appendChild(message);
+    chatArea.scrollTop = chatArea.scrollHeight
  }
+
 
 
 

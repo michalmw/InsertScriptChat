@@ -20,25 +20,28 @@ document.body.innerHTML = `
     </div>
 </body>
 `
+
+
+
 var typing = ''
 var sendInput = document.querySelector('.send-input')
 sendInput.addEventListener('keypress', (key) => {
     typing = sendInput.value;
     if (key.charCode == 13) {
         addMessages()
-        console.log('send ing', typing)
     }
 }, false)
-var chatArea = document.querySelector('.chat-area');
- console.log(chatArea)
 
+var chatArea = document.querySelector('.chat-area');
+ 
 const addMessages =  () => {
     let message = document.createElement('span');
-    console.log(message)
     message.innerHTML = typing; 
     message.classList = 'message';
     chatArea.appendChild(message);
+    chatArea.scrollTop = chatArea.scrollHeight
  }
+
 
 
 
