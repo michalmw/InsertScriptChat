@@ -93,10 +93,7 @@ document.body.innerHTML = `
     </div>
 </body>
 `
-
-
 var typing = ''
-
 var sendInput = document.querySelector('.send-input')
 sendInput.addEventListener('keypress', (key) => {
     typing = sendInput.value;
@@ -104,13 +101,9 @@ sendInput.addEventListener('keypress', (key) => {
         console.log('send ing', typing)
     }
 }, false)
-
-
 var chatArea = document.querySelector('chat-area');
-
  const addMessages =  () => {
     let message = document.createElement('div')
-
  }
 
 
