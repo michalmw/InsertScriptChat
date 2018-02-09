@@ -1,19 +1,28 @@
 .container {
+    transition: 1s;
     position: fixed;
-    bottom: 25px;
-    right: 10px;
+    bottom: -60px;
+    right: 225px;
     background-color: aqua;
     width: 320px;
+    width: 100px;
+    height: 100px;
+    background: red;
 }
+
+.animate-up {
+    bottom: 200px
+}
+
 
 .first-bar {
     height: 40px;
     width: 320px;
     background-color: blue;
-
+    position: relative;
 }
 .send-input {
-    width: 100%;
+    width: 320px !important;
     height: 45px;
 }
 
@@ -34,6 +43,15 @@
     display:block;
     width: 300px !important;
     word-wrap:break-word;
+}
+
+.up-btn {
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 10px;
+    top: 7px;
 }
 
 .chat-area {

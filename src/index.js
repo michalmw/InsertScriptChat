@@ -12,7 +12,9 @@ import './styles.css'
 document.body.innerHTML = `
 <body>
     <div class="container">
-        <div class="first-bar"></div>
+        <div class="first-bar">
+          <button class="up-btn">up</button>
+        </div>
         <div class="chat-area"></div>
         <div class="input-bar">
             <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
@@ -42,6 +44,15 @@ const addMessages =  () => {
     chatArea.scrollTop = chatArea.scrollHeight
  }
 
+const upButton = document.querySelector('.up-btn')
+upButton.addEventListener('click', ()=> {
+  const container = document.querySelector('.container')
+  if (container.classList.contains('animate-up')) {
+    container.classList.remove('animate-up')
+  } else {
+    container.classList.add('animate-up')
+  }
+})
 
 
 
