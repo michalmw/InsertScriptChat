@@ -87,12 +87,14 @@ document.body.innerHTML = `
 <button id="myBtn">Open Modal</button>
 
 <div id="myModal" class="modal">
-<button id="myBtn">Open Modal</button>
+
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Some text in the Modal..dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+    <p>Some text in the Modal..</p>
   </div>
+
+
     <div class="container">
         <div class="first-bar">
           <button class="up-setting">setting</button>
