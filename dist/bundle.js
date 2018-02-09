@@ -93,24 +93,24 @@ document.body.innerHTML = `
     </div>
 </body>
 `
+
+
+
 var typing = ''
 var sendInput = document.querySelector('.send-input')
 sendInput.addEventListener('keypress', (key) => {
     typing = sendInput.value;
     if (key.charCode == 13) {
         addMessages()
-        console.log('send ing', typing)
     }
 }, false)
-var chatArea = document.querySelector('.chat-area');
- console.log(chatArea)
 
+var chatArea = document.querySelector('.chat-area');
+ 
 const addMessages =  () => {
     let message = document.createElement('span');
-    console.log(message)
     message.innerHTML = typing; 
     message.classList = 'message';
-
     chatArea.appendChild(message);
     chatArea.scrollTop = chatArea.scrollHeight
  }
@@ -180,7 +180,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, ".container {\r\n    position: fixed;\r\n    bottom: 25px;\r\n    right: 10px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n}\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: blue;\r\n\r\n}\r\n.send-input {\r\n    width: 100%;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.message {\r\n    display:block;\r\n    width: 320px !important;\r\n    word-wrap:break-word;\r\n}\r\n\r\n\r\n.chat-area {\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    background-color: white;\r\n    height: 210px;\r\n    width: 320px !important;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}", ""]);
+exports.push([module.i, ".container {\r\n    position: fixed;\r\n    bottom: 25px;\r\n    right: 10px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n}\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: blue;\r\n\r\n}\r\n.send-input {\r\n    width: 100%;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.message {\r\n    margin-left: 10px;\r\n    margin-right: 50px;\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n    background-color: #9CCC65;\r\n    display:block;\r\n    width: 300px !important;\r\n    word-wrap:break-word;\r\n}\r\n\r\n.chat-area {\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    background-color: white;\r\n    height: 210px;\r\n    width: 320px !important;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}", ""]);
 
 // exports
 
