@@ -14,7 +14,7 @@ document.body.innerHTML = `
     <div class="container">
         <div class="first-bar">
           <button class="up-btn">up</button>
-        </div>
+        </div>dsad
         <div class="chat-area"></div>
         <div class="input-bar">
             <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
