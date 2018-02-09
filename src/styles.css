@@ -25,7 +25,9 @@
 }
 
 .message {
-    text-justify: auto;
+    display:block;
+    width: 320px !important;
+    word-wrap:break-word;
 }
 
 

@@ -33,7 +33,7 @@ var chatArea = document.querySelector('.chat-area');
  console.log(chatArea)
 
 const addMessages =  () => {
-    let message = document.createElement('div');
+    let message = document.createElement('span');
     console.log(message)
     message.innerHTML = typing; 
     message.classList = 'message';
