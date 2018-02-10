@@ -96,7 +96,7 @@ export const setFunctionsToForm = () => {
             text: message.value
         }
         if (firstVal && nextVal && thirdVal) {
-            fetch("http://zniesmaczonyzbyszek.herokuapp.com/api/user/email",
+            fetch("https://zniesmaczonyzbyszek.herokuapp.com/api/user/email",
                 {
                     method: "POST",
                     headers: {
