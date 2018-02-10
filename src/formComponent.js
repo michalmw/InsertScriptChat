@@ -1,4 +1,3 @@
-
 let formContainer =
 `
 <div class="container-sur-chat" id="elementMoving">
@@ -24,7 +23,6 @@ let formContainer =
 </div>
 </div>
 `
-
 const setValidate = (element, validatioFun, smallVallidation) => {
     element.addEventListener('input', (event) => {
         if (validatioFun(element)) {
@@ -96,5 +94,5 @@ const setFunctionsToForm = () => {
             console.log('uzupelnij poprawnie')
         }
     }, false)
-
+    
 }

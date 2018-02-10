@@ -9,9 +9,7 @@ let chatContainer = `
     <textarea placeholder="wpisz tu i naciśnij enter" class="send-input-sur-chat textarea-sur-chat"></textarea>
 </div>
 </div>
-
 `
-
 const setFunctionsToChat = () => {
     this.typing = ''
     this.sendInput = document.querySelector('.send-input-sur-chat')
@@ -29,14 +27,6 @@ const setFunctionsToChat = () => {
     this.fileManager.addEventListener('change', (event) => {
         console.log(this.fileManager.value, 'even');
     }, false)
-
-    // const addMessages = () => {
-    //     let message = document.createElement('span');
-    //     message.innerHTML = this.typing;
-    //     message.classList = 'message-sur-chat';
-    //     this.chatArea.appendChild(message);
-    //     this.chatArea.scrollTop = this.chatArea.scrollHeight
-    // }
 }
 
 function addMessages(message) {

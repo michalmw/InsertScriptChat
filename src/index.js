@@ -76,9 +76,6 @@ const movingElement = document.querySelector('#elementMoving');
 // }, false)
 
 
-
-
-
 // movingElement.addEventListener('mousemove', function (event) {
 
 // }, false)
