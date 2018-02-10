@@ -107,7 +107,7 @@ export const setFunctionsToForm = () => {
                 }).then(message => {
                     name.value = '';
                     address.value = '';
-                    email.value = '';
+                    message.value = '';
                     console.log(message);
                 })
             console.log('Can Send')
