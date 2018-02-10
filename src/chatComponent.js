@@ -1,7 +1,7 @@
 export let chatContainer = `
-<div class="container-sur-chat" id="elementMoving">
+<div class="container-sur-chat"  id="chatComponent">
 <div class="first-bar-sur-chat">
-  <button class="up-btn-sur-chat">up</button>
+  <button class="up-btn-sur-chat" id="chatToogle">up</button>
 </div>
 <div class="chat-area-sur-chat"></div>
 <div class="input-bar-sur-chat">
@@ -11,7 +11,6 @@ export let chatContainer = `
 </div>
 `
 export const setFunctionsToChat = (con) => {
-    checkIsUserInChat = true;
     let typing = ''
     const sendInput = document.querySelector('.send-input-sur-chat')
     const fileManager = document.querySelector('.file-manager');

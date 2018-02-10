@@ -1,8 +1,8 @@
 export let formContainer =
 `
-<div class="container-sur-chat" id="elementMoving">
+<div class="container-sur-chat" id="formComponent">
   <div class="first-bar-sur-chat">
-    <button class="">up</button>
+    <button class="up-btn-sur-chat" id="formToogle">up</button>
   </div>
   <div class="chat-area-sur-chat">
     <p class="left-message-text-sur-chat">
@@ -24,8 +24,6 @@ export let formContainer =
 </div>
 `
 export const setValidate = (element, validatioFun, smallVallidation) => {
-    checkIsUserInChat = false;
-
     element.addEventListener('input', (event) => {
         if (validatioFun(element)) {
             smallVallidation.style.display = 'none';

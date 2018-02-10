@@ -16,33 +16,58 @@ con.nextMessage = message => {
     console.log('message', message)
 }
 con.changeComponent = online => {
-    console.log(online, '2122222222222222222222222')
+    if (online) {
+        console.log('logged', chatComponent.style.display, 'yes')
+        if (chat.style.display == 'none'){
+            form.style.display = 'none'; 
+            chat.style.display = 'block';
+        }
+    } else {
+        console.log('unlogged', formComponent.style.display, 'none')
+        if (form.style.display == 'none') {
+            form.style.display = 'block';
+            chat.style.display = 'none';
+        }
+    }
+    console.log(online)
 }
 
 import { addMessages, setFunctionsToChat, chatContainer } from './chatComponent'
 import { setFunctionsToForm, formContainer, setValidate } from './formComponent'
 
 
+var chat = document.createElement('div');
+chat.innerHTML = chatContainer;
+chat.style.display = 'none'
+var form = document.createElement('div');
+form.style.display = 'none'
+form.innerHTML = formContainer;
+document.body.appendChild(chat)
+document.body.appendChild(form)
+setFunctionsToForm()
+setFunctionsToChat(con)
 
+const formButt = form.querySelector('#formToogle')
+const chatButt = chat.querySelector('#chatToogle')
 
-///to to set up a actual running component
+formButt.addEventListener('click', () => {
+    console.log('wtdf')
+    if (formButt.classList.contains('animate-up-sur-chat')) {
+        formButt.classList.remove('animate-up-sur-chat')
+    } else {
+        formButt.classList.add('animate-up-sur-chat')
+    }
+})
 
-// setFunctionsToForm()
-// setFunctionsToChat(con);
-
-function setUpButton() {
-    const upButton = document.querySelector('.up-btn-sur-chat')
-    upButton.addEventListener('click', () => {
-        const container = document.querySelector('.container-sur-chat')
-        if (container.classList.contains('animate-up-sur-chat')) {
-            container.classList.remove('animate-up-sur-chat')
-        } else {
-            container.classList.add('animate-up-sur-chat')
-        }
-    })
-}
-
-
+chatButt.addEventListener('click', () => {
+    console.log('wtdf')
+    console.lohg
+    if (chatButt.classList.contains('animate-up-sur-chat')) {
+        chatButt.classList.remove('animate-up-sur-chat')
+    } else {
+        chatButt.classList.add('animate-up-sur-chat')
+    }
+})
 
 let style = getComputedStyle(document.body);
 const setColorVariables = (variable, value) => { document.documentElement.style.setProperty(variable, value); }
