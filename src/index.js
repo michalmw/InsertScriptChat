@@ -49,7 +49,11 @@ let formContainer =
     </div>
   </div>
 `
-document.body.innerHTML = chatContainer
+
+
+var content = document.createElement('div');
+content.innerHTML = chatContainer;
+document.body.appendChild(content);
 
 
 console.log('a')
