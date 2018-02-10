@@ -67,7 +67,6 @@ export const setFunctionsToForm = () => {
 
     setValidate(address, (element) => {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        console.log(re.test(String(element.value).toLowerCase()));
         if (re.test(String(element.value).toLowerCase())) {
             nextVal = true;
             return true;
@@ -88,7 +87,6 @@ export const setFunctionsToForm = () => {
     }, messageVal);
 
     sendLoginInformation.addEventListener('click', () => {
-        console.log(name.value, address.value, message.value)
         const obj = {
             id: '5a7df73dca482d00046486d9',
             name: name.value,
@@ -110,7 +108,6 @@ export const setFunctionsToForm = () => {
                     message.value = '';
                     console.log(message);
                 })
-            console.log('Can Send')
         } else {
             console.log('uzupelnij poprawnie')
         }
