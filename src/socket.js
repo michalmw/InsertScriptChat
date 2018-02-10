@@ -14,7 +14,7 @@ export function communication(address, gateId) {
             message: message,
         })
     }
-    fetch(`http://${address}/initCookie`, {
+    fetch(`https://${address}/initCookie`, {
         credentials: 'include'
     }).then(x => x.text())
         .then(() => {
