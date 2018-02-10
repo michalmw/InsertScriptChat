@@ -1,5 +1,5 @@
 export let formContainer =
-`
+    `
 <div class="container-sur-chat" id="formComponent">
   <div class="first-bar-sur-chat">
     <button class="up-btn-sur-chat" id="formToogle">up</button>
@@ -68,8 +68,8 @@ export const setFunctionsToForm = () => {
     setValidate(address, (element) => {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (re.test(String(element.value).toLowerCase())) {
-            return true;
             nextVal = true;
+            return true;
         } else {
             nextVal = false;
             return false;
@@ -87,9 +87,27 @@ export const setFunctionsToForm = () => {
     }, messageVal);
 
     sendLoginInformation.addEventListener('click', () => {
-        console.log(firstVal, nextVal, thirdVal)
+        const obj = {
+            id: '5a7df73dca482d00046486d9',
+            name: name.value,
+            email: address.value,
+            text: message.value
+        }
         if (firstVal && nextVal && thirdVal) {
-            console.log('Can Send')
+            fetch("https://zniesmaczonyzbyszek.herokuapp.com/api/user/email",
+                {
+                    method: "POST",
+                    headers: {
+                        'Accept': 'application/json, text/plain, */*',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(obj)
+                }).then(message => {
+                    name.value = '';
+                    address.value = '';
+                    message.value = '';
+                    console.log(message);
+                })
         } else {
             console.log('uzupelnij poprawnie')
         }
