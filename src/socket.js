@@ -18,8 +18,7 @@ export function communication(address, gateId) {
         credentials: 'include'
     }).then(x => x.text())
         .then(() => {
-            ws = new WebSocket(`ws://${address}?gateId=${gateId}`)
-            console.log(ws)
+            ws = new WebSocket(`wss://${address}?gateId=${gateId}`)
             ws.onmessage = (message) => {
                 console.log(message)
                 const obj = JSON.parse(message.data)
