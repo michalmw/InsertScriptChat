@@ -44,27 +44,47 @@ document.getElementById('files').addEventListener('change', function () {
             return {
                 type: 'image',
                 name: this.files[0].name,
-                content: base64
+                content: base64,
+                gateId: '5a7df73dca482d00046486d9'
             }
-        }).then(obj => fetch('https://zniesmaczonyzbyszek.herokuapp.com/api/file', {
+        }).then(obj => fetch('https://zniesmaczonyzbyszek.herokuapp.com/file', {
+            credentials: 'include',
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(obj)
         }))
-        .then(message => {
-            addMessages(message)
+        .then(x => x.json())
+        .then((x) => {
+            addMessages(x)
         })
 
 }, false)
+
+
+function test(bool) {
+    if (bool) {
+        if (chat.style.display == 'none') {
+            form.style.display = 'none';
+            chat.style.display = 'block';
+        }
+    } else {
+        if (form.style.display == 'none') {
+            form.style.display = 'block';
+            chat.style.display = 'none';
+        }
+    }
+}
+test(true)
+
 
 function getBase64(file) {
     var reader = new FileReader();
     reader.readAsDataURL(file);
     return new Promise((resolve, reject) => {
         reader.onload = function () {
-            resolve(reader.result)
+            resolve(reader.result.substring(22))
         };
         reader.onerror = function (error) {
             reject(error)
@@ -109,42 +129,4 @@ setColorVariables('--font-size-message-sur-chat', '20px');
 var speed = 10; // the box will move by 10 pixels on every step
 var direction = 1; // 1 = move right; -1 = move left
 var mouseX, mouseY = 0;
-const movingElement = document.querySelector('#elementMoving');
-
-// addEventListener(movingElement, 'onmousedown', fu)
-// document.addEventListener('mousemove', function (event) {
-//     var cX = event.clientX;
-//     var sX = event.screenX;
-//     var cY = event.clientY;
-//     var sY = event.screenY;
-//     mouseX = cX;
-//     mouseY = cY;
-//     var coords1 = "client - X: " + cX + ", Y coords: " + c
-//     var coords2 = "screen - X: " + sX + ", Y coords: " + sY;
-//     console.log(mouseX, mouseY)
-
-//     console.log(event);
-
-//     var boxLeftPos = movingElement.offsetLeft,
-//         boxRightPos = boxLeftPos + movingElement.offsetWidth;
-//     // When right side of the box goes too far - change direction:
-//     if (boxRightPos > document.body.offsetWidth) {
-//         direction = -1;
-//     }
-//     // When left side of the box goes too far - change direction:
-//     if (boxLeftPos < 0) {
-//         direction = 1;
-//     }
-//     // Recalculate position:
-//     movingElement.style.left = mouseX;
-//     movingElement.style.topwebpack = mouseY;
-// }, false)
-
-
-// movingElement.addEventListener('mousemove', function (event) {
-
-// }, false)
-
-
-// console.log(style.getPropertyValue('--bars-color'));
-// console.log(style.getPropertyValue('--chat-area'));
+const movingElement = document.querySelector('#elementMoving')

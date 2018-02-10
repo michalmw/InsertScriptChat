@@ -19,6 +19,7 @@ export function communication(address, gateId) {
     }).then(x => x.text())
         .then(() => {
             ws = new WebSocket(`ws://${address}?gateId=${gateId}`)
+            console.log(ws)
             ws.onmessage = (message) => {
                 console.log(message)
                 const obj = JSON.parse(message.data)
