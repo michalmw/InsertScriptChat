@@ -16,19 +16,7 @@ con.nextMessage = message => {
     console.log('message', message)
 }
 con.changeComponent = online => {
-    if (online) {
-        console.log('logged', chatComponent.style.display, 'yes')
-        if (chat.style.display == 'none'){
-            form.style.display = 'none'; 
-            chat.style.display = 'block';
-        }
-    } else {
-        console.log('unlogged', formComponent.style.display, 'none')
-        if (form.style.display == 'none') {
-            form.style.display = 'block';
-            chat.style.display = 'none';
-        }
-    }
+
     console.log(online)
 }
 
@@ -44,6 +32,35 @@ form.style.display = 'none'
 form.innerHTML = formContainer;
 document.body.appendChild(chat)
 document.body.appendChild(form)
+
+
+
+
+function test(val) {
+    if (val) {
+        console.log('logged', chat.style.display, 'yes')
+        if (chat.style.display == 'none') {
+            form.style.display = 'none';
+            chat.style.display = 'block';
+        }
+    } else {
+        console.log('unlogged', form.style.display, 'none')
+        if (form.style.display == 'none') {
+            form.style.display = 'block';
+            chat.style.display = 'none';
+        }
+    }
+}
+
+test(false);
+
+
+
+
+
+
+
+
 setFunctionsToForm()
 setFunctionsToChat(con)
 
@@ -51,21 +68,28 @@ const formButt = form.querySelector('#formToogle')
 const chatButt = chat.querySelector('#chatToogle')
 
 formButt.addEventListener('click', () => {
-    console.log('wtdf')
-    if (formButt.classList.contains('animate-up-sur-chat')) {
-        formButt.classList.remove('animate-up-sur-chat')
+    console.log('wtdasdsaddf')
+    console.log(form)
+
+    var formContainer = form.querySelector('.container-sur-chat')
+
+
+    if (formContainer.classList.contains('animate-up-sur-chat')) {
+        formContainer.classList.remove('animate-up-sur-chat')
     } else {
-        formButt.classList.add('animate-up-sur-chat')
+        formContainer.classList.add('animate-up-sur-chat')
     }
 })
 
 chatButt.addEventListener('click', () => {
     console.log('wtdf')
-    console.lohg
-    if (chatButt.classList.contains('animate-up-sur-chat')) {
-        chatButt.classList.remove('animate-up-sur-chat')
+    console.log(chat)
+    var chatContainer = chat.querySelector('.container-sur-chat')
+    if (chatContainer.classList.contains('animate-up-sur-chat')) {
+        chatContainer.classList.remove('animate-up-sur-chat')
     } else {
-        chatButt.classList.add('animate-up-sur-chat')
+        console.log('do nt have')
+        chatContainer.classList.add('animate-up-sur-chat')
     }
 })
 
