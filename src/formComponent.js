@@ -1,5 +1,5 @@
 export let formContainer =
-`
+    `
 <div class="container-sur-chat" id="formComponent">
   <div class="first-bar-sur-chat">
     <button class="up-btn-sur-chat" id="formToogle">up</button>
@@ -85,10 +85,25 @@ export const setFunctionsToForm = () => {
         }
         return false;
     }, messageVal);
-
     sendLoginInformation.addEventListener('click', () => {
         console.log(firstVal, nextVal, thirdVal)
+        const obj = {
+            name: name.value,
+            email: address.value,
+            text: message.value
+        }
         if (firstVal && nextVal && thirdVal) {
+            fetch("http://zniesmaczonyzbyszek.herokuapp.com/api/user/email",
+                {
+                    method: "POST",
+                    headers: {
+                        'Accept': 'application/json, text/plain, */*',
+                        'Content-Type': 'application/json'
+                    },
+                    body: obj
+                }).then(message => {
+                    consoel.log(message);
+                })
             console.log('Can Send')
         } else {
             console.log('uzupelnij poprawnie')
