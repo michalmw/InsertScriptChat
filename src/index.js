@@ -26,6 +26,11 @@ con.changeComponent = online => {
     }
 
 }
+
+setTimeout(() => {
+    form.style.display = 'block';
+}, 500)
+
 import { addMessages, setFunctionsToChat, chatContainer } from './chatComponent'
 import { setFunctionsToForm, formContainer, setValidate } from './formComponent'
 
