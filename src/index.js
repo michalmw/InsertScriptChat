@@ -17,8 +17,8 @@ let chatContainer = `
 </div>
 <div class="chat-area-sur-chat"></div>
 <div class="input-bar-sur-chat">
-    <input type="file" placeholder="Plik" style="right:1" class="file-manager"></input>
-    <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input-sur-chat">
+    <input type="file" placeholder="Plik" style="right:1" class="file-manager input-sur-chat"></input>
+    <textarea placeholder="wpisz tu i naciśnij enter" class="send-input-sur-chat textarea-sur-chat"></textarea>
 </div>
 </div>
 
@@ -34,11 +34,11 @@ let formContainer =
         <p class="left-message-text-sur-chat">
           Wypełnij proszę poniższe pola, a my skontaktujemy się z Tobą tak szybko jak będzie to możliwe..
         </p>
-        <input type="text" placeholder="nazwa" class="input-area__name">
+        <input type="text" placeholder="nazwa" class="input-area__name input-sur-chat">
         <small id="input-validator-name" style="color: red"> To pole jest wymagane i  3 znaki  </small>
-        <input type="text" placeholder="adres" class="input-area__address">
+        <input type="text" placeholder="adres" class="input-area__address input-sur-chat">
         <small id="input-validator-address" style="color: red"> Proszę podać poprawny email </small>
-        <input type="text" placeholder="wiadomość" class="input-area__message-sur-chat">
+        <input type="text" placeholder="wiadomość" class="input-area__message-sur-chat input-sur-chat">
         <small id="input-validator-message" style="color: red"> proszę podać wiadomosć </small>
         <div style="text-align: center; display: block;">
         <button placeholder="Wyślij" class="send-login-information-sur-chat">Wyślij</button>
