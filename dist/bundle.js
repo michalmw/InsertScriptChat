@@ -84,12 +84,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // }
 
 let chatContainer = `
-<div class="container" id="elementMoving">
-<div class="first-bar">
-  <button class="up-btn">up</button>
+<div class="container-sur-chat" id="elementMoving">
+<div class="first-bar-sur-chat">
+  <button class="up-btn-sur-chat">up</button>
 </div>
-<div class="chat-area"></div>
-<div class="input-bar">
+<div class="chat-area-sur-chat"></div>
+<div class="input-bar-sur-chat">
     <input type="file" placeholder="Plik" style="right:1" class="file-manager"></input>
     <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
 </div>
@@ -99,11 +99,11 @@ let chatContainer = `
 
 let formContainer =
     `
-    <div class="container" id="elementMoving">
-      <div class="first-bar">
-        <button class="up-btn">up</button>
+    <div class="container-sur-chat" id="elementMoving">
+      <div class="first-bar-sur-chat">
+        <button class="">up</button>
       </div>
-      <div class="chat-area">
+      <div class="chat-area-sur-chat">
         <p class="left-message-text">
           Wypełnij proszę poniższe pola, a my skontaktujemy się z Tobą tak szybko jak będzie to możliwe..
         </p>
@@ -117,7 +117,7 @@ let formContainer =
         <button placeholder="Wyślij" class="send-login-information">Wyślij</button>
         </div>
       </div> 
-      <div class="input-bar">
+      <div class="input-bar-sur-chat">
       </div>
     </div>
   </div>
@@ -151,7 +151,7 @@ const setFunctionsToForm = () => {
     this.addressVal.style.display = 'none';
     this.messageVal.style.display = 'none';
 
-    this.chatArea = document.querySelector('.chat-area');
+    this.chatArea = document.querySelector('.chat-area-sur-chat');
     this.name = document.querySelector('.input-area__name');
     this.address = document.querySelector('.input-area__address');
     this.message = document.querySelector('.input-area__message');
@@ -226,12 +226,12 @@ const setFunctionsToChat = () => {
 
 
 
-    this.chatArea = document.querySelector('.chat-area');
+    this.chatArea = document.querySelector('.chat-area-sur-chat');
 
     const addMessages = () => {
         let message = document.createElement('span');
         message.innerHTML = this.typing;
-        message.classList = 'message';
+        message.classList = 'message-sur-chat';
         this.chatArea.appendChild(message);
         this.chatArea.scrollTop = this.chatArea.scrollHeight
 
@@ -244,13 +244,13 @@ setFunctionsToChat();
 
 
 
-const upButton = document.querySelector('.up-btn')
+const upButton = document.querySelector('.up-btn-sur-chat')
 upButton.addEventListener('click', () => {
-    const container = document.querySelector('.container')
-    if (container.classList.contains('animate-up')) {
-        container.classList.remove('animate-up')
+    const container = document.querySelector('.container-sur-chat')
+    if (container.classList.contains('animate-up-sur-chat')) {
+        container.classList.remove('animate-up-sur-chat')
     } else {
-        container.classList.add('animate-up')
+        container.classList.add('animate-up-sur-chat')
     }
 })
 
@@ -370,7 +370,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\r\n:root {\r\n    --bars-color-sur--chat: purple;\r\n    --chat-area-bg-color-sur--chat: blue;\r\n    --chat-area-message-bg-color-sur--chat: green;\r\n    --chat-area-font-color-sur--chat: grey;\r\n}\r\n\r\n\r\n.container {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 5px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.container2 {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 328px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.animate-up {\r\n    bottom: 242px\r\n}\r\n\r\n.chat-area input, .chat-area textarea {\r\n    margin-left: 25px;\r\n    border-radius: 5px;\r\n    margin-top: 10px;\r\n    margin-bottom: 10px;\r\n    border: 1px solid grey;\r\n    height: 25px;\r\n    padding-left: 12px; \r\n    width: 270px;\r\n}\r\n\r\n.left-message-text {\r\n    font-size: 14px;\r\n    color: gray;\r\n    text-align: center;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\ninput:placeholder, textarea:placeholder {\r\n    color: gray;\r\n    font-weight: 400;\r\n}\r\n\r\n.input-area__message {\r\n    min-height: 50px;\r\n}\r\n\r\n.first-bar {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: var(--bars-color-sur--chat);\r\n    position: relative;\r\n}\r\n.send-input {\r\n    width: 320px !important;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.message {\r\n    margin-left: 10px;\r\n    margin-right: 50px;\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n    background-color: var(--chat-area-message-bg-color-sur--chat);\r\n    display: block;\r\n    width: 300px !important;\r\n    word-wrap:break-word;\r\n    color: var(--chat-area-font-color)\r\n}\r\n\r\n.up-btn {\r\n    border-radius: 100%;\r\n    width: 25px;\r\n    height: 25px;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 7px;\r\n}\r\n\r\n.up-setting {\r\n    border-radius: 100%;\r\n    position: absolute;\r\n    top: 7px;\r\n}\r\n\r\n.chat-area {\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    background-color: var(--chat-area-bg-color-sur--chat);\r\n    height: 250px;\r\n    width: 320px !important;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}\r\n\r\n\r\n.modal {\r\n    display: none; /* Hidden by default */\r\n    position: fixed; /* Stay in place */\r\n    z-index: 1; /* Sit on top */\r\n    padding-top: 100px; /* Location of the box */\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%; /* Full width */\r\n    height: 100%; /* Full height */\r\n    overflow: auto; /* Enable scroll if needed */\r\n    background-color: rgb(0,0,0); /* Fallback color */\r\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content {\r\n    background-color: #fefefe;\r\n    margin: auto;\r\n    padding: 20px;\r\n    border: 1px solid #888;\r\n    width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close {\r\n    color: #aaaaaa;\r\n    float: right;\r\n    font-size: 28px;\r\n    font-weight: bold;\r\n}\r\n\r\n.close:hover,\r\n.close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n.send-login-information {\r\n    width:  100px;\r\n    height: 30px;\r\n    background-color: green;\r\n}", ""]);
+exports.push([module.i, "\r\n:root {\r\n    --bars-color-sur--chat: purple;\r\n    --chat-area-bg-color-sur--chat: blue;\r\n    --chat-area-message-bg-color-sur--chat: green;\r\n    --chat-area-font-color-sur--chat: grey;\r\n}\r\n\r\n\r\n.container-sur-chat {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 5px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.container2 {\r\n    transition: 1s;\r\n    position: fixed;\r\n    bottom: -60px;\r\n    right: 328px;\r\n    background-color: aqua;\r\n    width: 320px;\r\n    height: 100px;\r\n}\r\n\r\n.animate-up-sur-chat {\r\n    bottom: 242px\r\n}\r\n\r\n.chat-area-sur-chat input, .chat-area-sur-chat textarea {\r\n    margin-left: 25px;\r\n    border-radius: 5px;\r\n    margin-top: 10px;\r\n    margin-bottom: 10px;\r\n    border: 1px solid grey;\r\n    height: 25px;\r\n    padding-left: 12px; \r\n    width: 270px;\r\n}\r\n\r\n.left-message-text {\r\n    font-size: 14px;\r\n    color: gray;\r\n    text-align: center;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\ninput:placeholder, textarea:placeholder {\r\n    color: gray;\r\n    font-weight: 400;\r\n}\r\n\r\n.input-area__message {\r\n    min-height: 50px;\r\n}\r\n\r\n.first-bar-sur-chat {\r\n    height: 40px;\r\n    width: 320px;\r\n    background-color: var(--bars-color-sur--chat);\r\n    position: relative;\r\n}\r\n.send-input {\r\n    width: 320px !important;\r\n    height: 45px;\r\n}\r\n\r\n.input-bar-sur-chat {\r\n    border-radius: 5px;\r\n    min-height: 45px;\r\n    background-color: #eee;\r\n    \r\n}\r\n\r\n.message-sur-chat {\r\n    margin-left: 10px;\r\n    margin-right: 50px;\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    border-radius: 5px;\r\n    background-color: var(--chat-area-message-bg-color-sur--chat);\r\n    display: block;\r\n    width: 300px !important;\r\n    word-wrap:break-word;\r\n    color: var(--chat-area-font-color)\r\n}\r\n\r\n.up-btn-sur-chat {\r\n    border-radius: 100%;\r\n    width: 25px;\r\n    height: 25px;\r\n    position: absolute;\r\n    right: 10px;\r\n    top: 7px;\r\n}\r\n\r\n.up-setting {\r\n    border-radius: 100%;\r\n    position: absolute;\r\n    top: 7px;\r\n}\r\n\r\n.chat-area-sur-chat {\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    background-color: var(--chat-area-bg-color-sur--chat);\r\n    height: 250px;\r\n    width: 320px !important;\r\n    border: 0.2px grey solid;\r\n}\r\n\r\nbody {\r\n    position: relative;\r\n}\r\n\r\n\r\n.modal {\r\n    display: none; /* Hidden by default */\r\n    position: fixed; /* Stay in place */\r\n    z-index: 1; /* Sit on top */\r\n    padding-top: 100px; /* Location of the box */\r\n    left: 0;\r\n    top: 0;\r\n    width: 100%; /* Full width */\r\n    height: 100%; /* Full height */\r\n    overflow: auto; /* Enable scroll if needed */\r\n    background-color: rgb(0,0,0); /* Fallback color */\r\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content */\r\n.modal-content {\r\n    background-color: #fefefe;\r\n    margin: auto;\r\n    padding: 20px;\r\n    border: 1px solid #888;\r\n    width: 80%;\r\n}\r\n\r\n/* The Close Button */\r\n.close {\r\n    color: #aaaaaa;\r\n    float: right;\r\n    font-size: 28px;\r\n    font-weight: bold;\r\n}\r\n\r\n.close:hover,\r\n.close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n.send-login-information {\r\n    width:  100px;\r\n    height: 30px;\r\n    background-color: green;\r\n}", ""]);
 
 // exports
 

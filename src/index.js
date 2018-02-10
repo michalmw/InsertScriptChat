@@ -11,12 +11,12 @@ import './styles.css'
 // }
 
 let chatContainer = `
-<div class="container" id="elementMoving">
-<div class="first-bar">
-  <button class="up-btn">up</button>
+<div class="container-sur-chat" id="elementMoving">
+<div class="first-bar-sur-chat">
+  <button class="up-btn-sur-chat">up</button>
 </div>
-<div class="chat-area"></div>
-<div class="input-bar">
+<div class="chat-area-sur-chat"></div>
+<div class="input-bar-sur-chat">
     <input type="file" placeholder="Plik" style="right:1" class="file-manager"></input>
     <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
 </div>
@@ -26,11 +26,11 @@ let chatContainer = `
 
 let formContainer =
     `
-    <div class="container" id="elementMoving">
-      <div class="first-bar">
-        <button class="up-btn">up</button>
+    <div class="container-sur-chat" id="elementMoving">
+      <div class="first-bar-sur-chat">
+        <button class="">up</button>
       </div>
-      <div class="chat-area">
+      <div class="chat-area-sur-chat">
         <p class="left-message-text">
           Wypełnij proszę poniższe pola, a my skontaktujemy się z Tobą tak szybko jak będzie to możliwe..
         </p>
@@ -44,7 +44,7 @@ let formContainer =
         <button placeholder="Wyślij" class="send-login-information">Wyślij</button>
         </div>
       </div> 
-      <div class="input-bar">
+      <div class="input-bar-sur-chat">
       </div>
     </div>
   </div>
@@ -78,7 +78,7 @@ const setFunctionsToForm = () => {
     this.addressVal.style.display = 'none';
     this.messageVal.style.display = 'none';
 
-    this.chatArea = document.querySelector('.chat-area');
+    this.chatArea = document.querySelector('.chat-area-sur-chat');
     this.name = document.querySelector('.input-area__name');
     this.address = document.querySelector('.input-area__address');
     this.message = document.querySelector('.input-area__message');
@@ -153,12 +153,12 @@ const setFunctionsToChat = () => {
 
 
 
-    this.chatArea = document.querySelector('.chat-area');
+    this.chatArea = document.querySelector('.chat-area-sur-chat');
 
     const addMessages = () => {
         let message = document.createElement('span');
         message.innerHTML = this.typing;
-        message.classList = 'message';
+        message.classList = 'message-sur-chat';
         this.chatArea.appendChild(message);
         this.chatArea.scrollTop = this.chatArea.scrollHeight
 
@@ -171,13 +171,13 @@ setFunctionsToChat();
 
 
 
-const upButton = document.querySelector('.up-btn')
+const upButton = document.querySelector('.up-btn-sur-chat')
 upButton.addEventListener('click', () => {
-    const container = document.querySelector('.container')
-    if (container.classList.contains('animate-up')) {
-        container.classList.remove('animate-up')
+    const container = document.querySelector('.container-sur-chat')
+    if (container.classList.contains('animate-up-sur-chat')) {
+        container.classList.remove('animate-up-sur-chat')
     } else {
-        container.classList.add('animate-up')
+        container.classList.add('animate-up-sur-chat')
     }
 })
 
