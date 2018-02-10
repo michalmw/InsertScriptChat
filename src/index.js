@@ -12,10 +12,10 @@ import { communication } from "./socket"
 
 const con = communication('zniesmaczonyzbyszek.herokuapp.com')
 con.initMessages = initMessages => {
-    console.log(initMessages)
+    console.log('init', initMessages)
 }
 con.nextMessage = message => {
-    console.log(message)
+    console.log('message', message)
 }
 
 let chatContainer = `
