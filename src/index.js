@@ -24,7 +24,7 @@ con.changeComponent = online => {
             document.body.appendChild(content);
             setUpButton();
             setFunctionsToChat(con);
-        }
+        } 
     } else {
         if (checkIsUserInChat) {
             var content = document.createElement('div');
