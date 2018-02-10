@@ -85,9 +85,11 @@ export const setFunctionsToForm = () => {
         }
         return false;
     }, messageVal);
+
     sendLoginInformation.addEventListener('click', () => {
         console.log(firstVal, nextVal, thirdVal)
         const obj = {
+            id: '5a7df73dca482d00046486d9',
             name: name.value,
             email: address.value,
             text: message.value
@@ -100,9 +102,9 @@ export const setFunctionsToForm = () => {
                         'Accept': 'application/json, text/plain, */*',
                         'Content-Type': 'application/json'
                     },
-                    body: obj
+                    body: JSON.parse(obj)
                 }).then(message => {
-                    consoel.log(message);
+                    console.log(message);
                 })
             console.log('Can Send')
         } else {
