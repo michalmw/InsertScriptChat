@@ -23,10 +23,10 @@ export function communication(address, gateId) {
                 const obj = JSON.parse(message.data)
                 if (obj.type = 'init') {
                     initMessages(obj.messages)
-                } else if (obj.type === 'fromServer') {
+                } else if (obj.type === 'fromUser') {
                     nextMessage(obj)
                 } else {
-                    throw new Error('unknown type')
+                    console.log(obj)
                 }
             }
         })
