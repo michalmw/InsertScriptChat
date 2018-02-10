@@ -9,7 +9,7 @@
 .container-sur-chat {
     transition: 1s;
     position: fixed;
-    bottom: -40px;
+    bottom: -60px;
     z-index: 10000;
     right: 5px;
     background-color: aqua;
@@ -18,7 +18,7 @@
 }
 
 .animate-up-sur-chat {
-    bottom: 242px
+    bottom: 273px
 }
 
 .chat-area-sur-chat input,
@@ -100,7 +100,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     background-color: var(--chat-area-bg-color-sur--chat);
-    height: 250px;
+    height: 280px;
     width: 320px !important;
     border: 0.2px grey solid;
 }
