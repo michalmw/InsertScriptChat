@@ -105,6 +105,9 @@ export const setFunctionsToForm = () => {
                     },
                     body: JSON.stringify(obj)
                 }).then(message => {
+                    name.value = '';
+                    address.value = '';
+                    email.value = '';
                     console.log(message);
                 })
             console.log('Can Send')
