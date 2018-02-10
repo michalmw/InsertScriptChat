@@ -1,7 +1,7 @@
 import './styles.css'
 import { communication } from "./socket"
-import './chatComponent'
-import './formComponent'
+import {addMessages, setFunctionsToChat, chatContainer} from './chatComponent'
+import {setFunctionsToForm, formContainer, setValidate} from './formComponent'
 
 const con = communication('zniesmaczonyzbyszek.herokuapp.com', '5a7df73dca482d00046486d9')
 con.initMessages = initMessages => {

@@ -1,4 +1,4 @@
-let chatContainer = `
+export let chatContainer = `
 <div class="container-sur-chat" id="elementMoving">
 <div class="first-bar-sur-chat">
   <button class="up-btn-sur-chat">up</button>
@@ -10,7 +10,7 @@ let chatContainer = `
 </div>
 </div>
 `
-const setFunctionsToChat = () => {
+export const setFunctionsToChat = () => {
     this.typing = ''
     this.sendInput = document.querySelector('.send-input-sur-chat')
     this.fileManager = document.querySelector('.file-manager');
@@ -29,7 +29,7 @@ const setFunctionsToChat = () => {
     }, false)
 }
 
-function addMessages(message) {
+export function addMessages(message) {
     const parent = document.querySelector('.chat-area-sur-chat');
     const span = document.createElement('span');
     span.innerHTML = message.message;

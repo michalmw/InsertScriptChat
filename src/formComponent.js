@@ -1,4 +1,4 @@
-let formContainer =
+export let formContainer =
 `
 <div class="container-sur-chat" id="elementMoving">
   <div class="first-bar-sur-chat">
@@ -23,7 +23,7 @@ let formContainer =
 </div>
 </div>
 `
-const setValidate = (element, validatioFun, smallVallidation) => {
+export const setValidate = (element, validatioFun, smallVallidation) => {
     element.addEventListener('input', (event) => {
         if (validatioFun(element)) {
             smallVallidation.style.display = 'none';
@@ -36,7 +36,7 @@ const setValidate = (element, validatioFun, smallVallidation) => {
     }, false)
 }
 
-const setFunctionsToForm = () => {
+export const setFunctionsToForm = () => {
     this.nameVal = document.querySelector('#input-validator-name');
     this.addressVal = document.querySelector('#input-validator-address');
     this.messageVal = document.querySelector('#input-validator-message');
@@ -94,5 +94,5 @@ const setFunctionsToForm = () => {
             console.log('uzupelnij poprawnie')
         }
     }, false)
-    
+
 }
