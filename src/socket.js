@@ -13,7 +13,7 @@ export function communication(address, gateId) {
             message: message,
         })
     }
-    return fetch(`http://${address}/initCookie`, {
+    fetch(`http://${address}/initCookie`, {
         credentials: 'include'
     }).then(x => x.text())
         .then(() => {
