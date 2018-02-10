@@ -10,7 +10,7 @@
 .container-sur-chat {
     transition: 1s;
     position: fixed;
-    bottom: -60px;
+    bottom: -40px;
     z-index: 10000;
     right: 5px;
     background-color: aqua;
@@ -41,10 +41,19 @@
     margin-right: 15px;
 }
 
-input:placeholder, textarea:placeholder {
+
+.input-sur-chat {
     color: gray;
     font-weight: 400;
 }
+
+
+.textarea-sur-chat {
+    color: gray;
+    height: 55px;
+    font-weight: 400;
+}
+
 
 .input-area__message-sur-chat {
     min-height: 50px;
@@ -58,7 +67,6 @@ input:placeholder, textarea:placeholder {
 }
 .send-input-sur-chat {
     width: 320px !important;
-    height: 45px;
 }
 
 .input-bar-sur-chat {
