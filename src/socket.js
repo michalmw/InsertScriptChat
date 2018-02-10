@@ -22,7 +22,7 @@ export function communication(address, gateId) {
             ws.onmessage = (message) => {
                 console.log(message)
                 const obj = JSON.parse(message.data)
-                if (obj.type = 'init' && obj.message !== undefined) {
+                if (obj.type === 'init') {
                     initMessages(obj.messages)
                 } else if (obj.type === 'fromUser') {
                     nextMessage(obj)

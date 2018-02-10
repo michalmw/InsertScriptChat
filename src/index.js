@@ -38,6 +38,40 @@ form.innerHTML = formContainer;
 document.body.appendChild(chat)
 document.body.appendChild(form)
 
+document.getElementById('files').addEventListener('change', function () {
+    getBase64(this.files[0])
+        .then(base64 => {
+            return {
+                type: 'image',
+                name: this.files[0].name,
+                content: base64
+            }
+        }).then(obj => fetch('https://zniesmaczonyzbyszek.herokuapp.com/api/file', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(obj)
+        }))
+        .then(message => {
+            addMessages(message)
+        })
+
+}, false)
+
+function getBase64(file) {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    return new Promise((resolve, reject) => {
+        reader.onload = function () {
+            resolve(reader.result)
+        };
+        reader.onerror = function (error) {
+            reject(error)
+        }
+    })
+}
+
 setFunctionsToForm()
 setFunctionsToChat(con)
 
