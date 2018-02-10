@@ -17,30 +17,6 @@ con.nextMessage = message => {
 }
 con.changeComponent = online => {
     console.log(online, '2122222222222222222222222')
-    if (online) {
-        if (!checkIsUserInChat) {
-            var content = document.createElement('div');
-            content.innerHTML = chatContainer;
-            document.body.appendChild(content);
-            setUpButton();
-            setFunctionsToChat(con);
-        } 
-    } else {
-        if (checkIsUserInChat) {
-            var content = document.createElement('div');
-            content.innerHTML = formContainer;
-            document.body.removeChild(document.body.lastChild);
-            document.body.appendChild(content)
-            setUpButton();
-            setFunctionsToForm();
-        } else {
-            var content = document.createElement('div');
-            content.innerHTML = formContainer;
-            document.body.appendChild(content);
-            setUpButton();
-            setFunctionsToForm(con);
-        }
-    }
 }
 
 import { addMessages, setFunctionsToChat, chatContainer } from './chatComponent'
