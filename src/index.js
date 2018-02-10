@@ -38,10 +38,10 @@ upButton.addEventListener('click', () => {
 let style = getComputedStyle(document.body);
 const setColorVariables = (variable, value) => { document.documentElement.style.setProperty(variable, value); }
 
-setColorVariables('--bars-colors-sur--chat', '4CAF50we');
-setColorVariables('--chat-area-bg-color-sur--chat', 'white');
-setColorVariables('--chat-area-message-bg-color-sur--chat', 'CDDC39');
-setColorVariables('--chat-area-font-color-sur--chat', '8BC34A');
+setColorVariables('--bars-colors-sur--chat', '#4CAF50we');
+setColorVariables('--chat-area-bg-color-sur--chat', 'black');
+setColorVariables('--chat-area-message-bg-color-sur--chat', 'red');
+setColorVariables('--chat-area-font-color-sur--chat', '#8BC34A');
 
 
 var speed = 10; // the box will move by 10 pixels on every step
