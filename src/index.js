@@ -1,39 +1,72 @@
 import './styles.css'
 import { communication } from "./socket"
 
+
+let checkIsUserInChat = false;
+
 const con = communication('zniesmaczonyzbyszek.herokuapp.com', '5a7df73dca482d00046486d9')
 con.initMessages = initMessages => {
-    for(const m of initMessages){
-        addMessages(m)    
-    }
     console.log('init', initMessages)
+    for (const m of initMessages) {
+        addMessages(m)
+    }
 }
 con.nextMessage = message => {
     addMessages(message)
     console.log('message', message)
 }
+con.changeComponent = online => {
+    console.log(online, '2122222222222222222222222')
+    if (online) {
+        if (!checkIsUserInChat) {
+            var content = document.createElement('div');
+            content.innerHTML = chatContainer;
+            document.body.appendChild(content);
+            setUpButton();
+            setFunctionsToChat(con);
+        }
+    } else {
+        if (checkIsUserInChat) {
+            var content = document.createElement('div');
+            content.innerHTML = formContainer;
+            document.body.removeChild(document.body.lastChild);
+            document.body.appendChild(content)
+            setUpButton();
+            setFunctionsToForm();
+        } else {
+            var content = document.createElement('div');
+            content.innerHTML = formContainer;
+            document.body.appendChild(content);
+            setUpButton();
+            setFunctionsToForm(con);
+        }
+    }
+}
 
-import {addMessages, setFunctionsToChat, chatContainer} from './chatComponent'
-import {setFunctionsToForm, formContainer, setValidate} from './formComponent'
+import { addMessages, setFunctionsToChat, chatContainer } from './chatComponent'
+import { setFunctionsToForm, formContainer, setValidate } from './formComponent'
+
 
 
 
 ///to to set up a actual running component
-var content = document.createElement('div');
-content.innerHTML = chatContainer;
-document.body.appendChild(content);
-// setFunctionsToForm()
-setFunctionsToChat(con);
 
-const upButton = document.querySelector('.up-btn-sur-chat')
-upButton.addEventListener('click', () => {
-    const container = document.querySelector('.container-sur-chat')
-    if (container.classList.contains('animate-up-sur-chat')) {
-        container.classList.remove('animate-up-sur-chat')
-    } else {
-        container.classList.add('animate-up-sur-chat')
-    }
-})
+// setFunctionsToForm()
+// setFunctionsToChat(con);
+
+function setUpButton() {
+    const upButton = document.querySelector('.up-btn-sur-chat')
+    upButton.addEventListener('click', () => {
+        const container = document.querySelector('.container-sur-chat')
+        if (container.classList.contains('animate-up-sur-chat')) {
+            container.classList.remove('animate-up-sur-chat')
+        } else {
+            container.classList.add('animate-up-sur-chat')
+        }
+    })
+}
+
+
 
 let style = getComputedStyle(document.body);
 const setColorVariables = (variable, value) => { document.documentElement.style.setProperty(variable, value); }

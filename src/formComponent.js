@@ -24,6 +24,8 @@ export let formContainer =
 </div>
 `
 export const setValidate = (element, validatioFun, smallVallidation) => {
+    checkIsUserInChat = false;
+
     element.addEventListener('input', (event) => {
         if (validatioFun(element)) {
             smallVallidation.style.display = 'none';

@@ -11,6 +11,7 @@ export let chatContainer = `
 </div>
 `
 export const setFunctionsToChat = (con) => {
+    checkIsUserInChat = true;
     let typing = ''
     const sendInput = document.querySelector('.send-input-sur-chat')
     const fileManager = document.querySelector('.file-manager');
