@@ -37,58 +37,58 @@ export const setValidate = (element, validatioFun, smallVallidation) => {
 }
 
 export const setFunctionsToForm = () => {
-    this.nameVal = document.querySelector('#input-validator-name');
-    this.addressVal = document.querySelector('#input-validator-address');
-    this.messageVal = document.querySelector('#input-validator-message');
+    const nameVal = document.querySelector('#input-validator-name');
+    const addressVal = document.querySelector('#input-validator-address');
+    const messageVal = document.querySelector('#input-validator-message');
 
-    this.nameVal.style.display = 'none';
-    this.addressVal.style.display = 'none';
-    this.messageVal.style.display = 'none';
+    nameVal.style.display = 'none';
+    addressVal.style.display = 'none';
+    messageVal.style.display = 'none';
 
-    this.chatArea = document.querySelector('.chat-area-sur-chat');
-    this.name = document.querySelector('.input-area__name');
-    this.address = document.querySelector('.input-area__address');
-    this.message = document.querySelector('.input-area__message-sur-chat');
+    const chatArea = document.querySelector('.chat-area-sur-chat');
+    const name = document.querySelector('.input-area__name');
+    const address = document.querySelector('.input-area__address');
+    const message = document.querySelector('.input-area__message-sur-chat');
 
-    this.firstVal = false;
-    this.nextVal = false;
-    this.thirdVal = false;
+    let firstVal = false;
+    let nextVal = false;
+    let thirdVal = false;
 
-    this.sendLoginInformation = document.querySelector('.send-login-information-sur-chat');
+    const sendLoginInformation = document.querySelector('.send-login-information-sur-chat');
 
-    setValidate(this.name, (element) => {
+    setValidate(name, (element) => {
         if (element.value !== undefined && element.value.length > 3) {
-            this.firstVal = true;
+            firstVal = true;
             return true;
         }
-        this.firstVal = false;
+        firstVal = false;
         return false;
-    }, this.nameVal);
+    }, nameVal);
 
-    setValidate(this.address, (element) => {
+    setValidate(address, (element) => {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (re.test(String(element.value).toLowerCase())) {
             return true;
-            this.nextVal = true;
+            nextVal = true;
         } else {
-            this.nextVal = false;
+            nextVal = false;
             return false;
         }
-    }, this.addressVal);
+    }, addressVal);
 
-    setValidate(this.message, (element) => {
+    setValidate(message, (element) => {
         if (element.value !== undefined && element.value.length > 3) {
-            this.thirdVal = true;
+            thirdVal = true;
             return true;
         } else {
-            this.thirdVal = false;
+            thirdVal = false;
         }
         return false;
-    }, this.messageVal);
+    }, messageVal);
 
-    this.sendLoginInformation.addEventListener('click', () => {
-        console.log(this.firstVal, this.nextVal, this.thirdVal)
-        if (this.firstVal && this.nextVal && this.thirdVal) {
+    sendLoginInformation.addEventListener('click', () => {
+        console.log(firstVal, nextVal, thirdVal)
+        if (firstVal && nextVal && thirdVal) {
             console.log('Can Send')
         } else {
             console.log('uzupelnij poprawnie')
