@@ -4,7 +4,7 @@ import { communication } from "./socket"
 const con = communication('zniesmaczonyzbyszek.herokuapp.com', '5a7df73dca482d00046486d9')
 con.initMessages = initMessages => {
     for(const m of initMessages){
-        addMessages(m)    
+        addMessages(m)
     }
     console.log('init', initMessages)
 }
