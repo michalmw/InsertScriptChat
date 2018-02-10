@@ -4,6 +4,7 @@
     --chat-area-bg-color-sur--chat: blue;
     --chat-area-message-bg-color-sur--chat: green;
     --chat-area-font-color-sur--chat: grey;
+    --font-size-message-sur-chat: 14px;
 }
 
 
@@ -80,6 +81,7 @@
     margin-left: 10px;
     margin-right: 50px;
     margin-top: 10px;
+    font-size: var(--font-size-message-sur-chat);
     padding: 10px;
     border-radius: 5px;
     background-color: var(--chat-area-message-bg-color-sur--chat);

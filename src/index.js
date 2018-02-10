@@ -1,28 +1,33 @@
 import './styles.css'
 import { communication } from "./socket"
 
-
 let checkIsUserInChat = false;
-
 const con = communication('zniesmaczonyzbyszek.herokuapp.com', '5a7df73dca482d00046486d9')
 con.initMessages = initMessages => {
-    console.log('init', initMessages)
     for (const m of initMessages) {
         addMessages(m)
     }
 }
 con.nextMessage = message => {
     addMessages(message)
-    console.log('message', message)
 }
+
 con.changeComponent = online => {
+    if (online) {
+        if (chat.style.display == 'none') {
+            form.style.display = 'none';
+            chat.style.display = 'block';
+        }
+    } else {
+        if (form.style.display == 'none') {
+            form.style.display = 'block';
+            chat.style.display = 'none';
+        }
+    }
 
-    console.log(online)
 }
-
 import { addMessages, setFunctionsToChat, chatContainer } from './chatComponent'
 import { setFunctionsToForm, formContainer, setValidate } from './formComponent'
-
 
 var chat = document.createElement('div');
 chat.innerHTML = chatContainer;
@@ -33,34 +38,6 @@ form.innerHTML = formContainer;
 document.body.appendChild(chat)
 document.body.appendChild(form)
 
-
-
-
-function test(val) {
-    if (val) {
-        console.log('logged', chat.style.display, 'yes')
-        if (chat.style.display == 'none') {
-            form.style.display = 'none';
-            chat.style.display = 'block';
-        }
-    } else {
-        console.log('unlogged', form.style.display, 'none')
-        if (form.style.display == 'none') {
-            form.style.display = 'block';
-            chat.style.display = 'none';
-        }
-    }
-}
-
-test(false);
-
-
-
-
-
-
-
-
 setFunctionsToForm()
 setFunctionsToChat(con)
 
@@ -68,12 +45,7 @@ const formButt = form.querySelector('#formToogle')
 const chatButt = chat.querySelector('#chatToogle')
 
 formButt.addEventListener('click', () => {
-    console.log('wtdasdsaddf')
-    console.log(form)
-
     var formContainer = form.querySelector('.container-sur-chat')
-
-
     if (formContainer.classList.contains('animate-up-sur-chat')) {
         formContainer.classList.remove('animate-up-sur-chat')
     } else {
@@ -82,13 +54,10 @@ formButt.addEventListener('click', () => {
 })
 
 chatButt.addEventListener('click', () => {
-    console.log('wtdf')
-    console.log(chat)
     var chatContainer = chat.querySelector('.container-sur-chat')
     if (chatContainer.classList.contains('animate-up-sur-chat')) {
         chatContainer.classList.remove('animate-up-sur-chat')
     } else {
-        console.log('do nt have')
         chatContainer.classList.add('animate-up-sur-chat')
     }
 })
@@ -100,6 +69,7 @@ setColorVariables('--bars-colors-sur--chat', '#4CAF50we');
 setColorVariables('--chat-area-bg-color-sur--chat', 'black');
 setColorVariables('--chat-area-message-bg-color-sur--chat', 'red');
 setColorVariables('--chat-area-font-color-sur--chat', '#8BC34A');
+setColorVariables('--font-size-message-sur-chat', '20px');
 
 
 var speed = 10; // the box will move by 10 pixels on every step
