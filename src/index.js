@@ -1,7 +1,5 @@
 import './styles.css'
 import { communication } from "./socket"
-import {addMessages, setFunctionsToChat, chatContainer} from './chatComponent'
-import {setFunctionsToForm, formContainer, setValidate} from './formComponent'
 
 const con = communication('zniesmaczonyzbyszek.herokuapp.com', '5a7df73dca482d00046486d9')
 con.initMessages = initMessages => {
@@ -15,13 +13,17 @@ con.nextMessage = message => {
     console.log('message', message)
 }
 
+import {addMessages, setFunctionsToChat, chatContainer} from './chatComponent'
+import {setFunctionsToForm, formContainer, setValidate} from './formComponent'
+
+
 
 ///to to set up a actual running component
 var content = document.createElement('div');
 content.innerHTML = chatContainer;
 document.body.appendChild(content);
 // setFunctionsToForm()
-setFunctionsToChat();
+setFunctionsToChat(con);
 
 const upButton = document.querySelector('.up-btn-sur-chat')
 upButton.addEventListener('click', () => {
@@ -55,7 +57,7 @@ const movingElement = document.querySelector('#elementMoving');
 //     var sY = event.screenY;
 //     mouseX = cX;
 //     mouseY = cY;
-//     var coords1 = "client - X: " + cX + ", Y coords: " + cY;
+//     var coords1 = "client - X: " + cX + ", Y coords: " + c
 //     var coords2 = "screen - X: " + sX + ", Y coords: " + sY;
 //     console.log(mouseX, mouseY)
 

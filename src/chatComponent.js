@@ -10,22 +10,22 @@ export let chatContainer = `
 </div>
 </div>
 `
-export const setFunctionsToChat = () => {
-    this.typing = ''
-    this.sendInput = document.querySelector('.send-input-sur-chat')
-    this.fileManager = document.querySelector('.file-manager');
+export const setFunctionsToChat = (con) => {
+    let typing = ''
+    const sendInput = document.querySelector('.send-input-sur-chat')
+    const fileManager = document.querySelector('.file-manager');
 
     console.log(this.sendInput)
-    this.sendInput.addEventListener('keypress', (key) => {
-        this.typing = this.sendInput.value;
+    sendInput.addEventListener('keypress', (key) => {
+        typing = sendInput.value;
         if (key.charCode == 13) {
-            con.send(this.typing)
+            con.send(typing)
         }
     }, false)
 
 
-    this.fileManager.addEventListener('change', (event) => {
-        console.log(this.fileManager.value, 'even');
+    fileManager.addEventListener('change', (event) => {
+        console.log(fileManager.value, 'even');
     }, false)
 }
 
