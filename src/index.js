@@ -68,20 +68,20 @@ document.getElementById('files').addEventListener('change', function () {
 }, false)
 
 
-function test(bool) {
-    if (bool) {
-        if (chat.style.display == 'none') {
-            form.style.display = 'none';
-            chat.style.display = 'block';
-        }
-    } else {
-        if (form.style.display == 'none') {
-            form.style.display = 'block';
-            chat.style.display = 'none';
-        }
-    }
-}
-test(true)
+// function test(bool) {
+//     if (bool) {
+//         if (chat.style.display == 'none') {
+//             form.style.display = 'none';
+//             chat.style.display = 'block';
+//         }
+//     } else {
+//         if (form.style.display == 'none') {
+//             form.style.display = 'block';
+//             chat.style.display = 'none';
+//         }
+//     }
+// }
+// test(true)
 
 
 function getBase64(file) {

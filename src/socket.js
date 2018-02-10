@@ -31,6 +31,9 @@ export function communication(address, gateId) {
                     console.log(obj)
                 }
             }
+            ws.onclose = (c) => {
+                console.log('closing', c)
+            }
         })
 
     return {
