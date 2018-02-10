@@ -15,11 +15,12 @@ con.nextMessage = message => {
     console.log('message', message)
 }
 
+
+///to to set up a actual running component
 var content = document.createElement('div');
 content.innerHTML = chatContainer;
 document.body.appendChild(content);
-
-console.log('a')
+// setFunctionsToForm()
 setFunctionsToChat();
 
 const upButton = document.querySelector('.up-btn-sur-chat')
