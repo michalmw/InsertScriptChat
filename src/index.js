@@ -38,10 +38,10 @@ let formContainer =
         <small id="input-validator-name" style="color: red"> To pole jest wymagane i  3 znaki  </small>
         <input type="text" placeholder="adres" class="input-area__address">
         <small id="input-validator-address" style="color: red"> Proszę podać poprawny email </small>
-        <input type="text" placeholder="wiadomość" class="input-area__message">
+        <input type="text" placeholder="wiadomość" class="input-area__message-sur-chat">
         <small id="input-validator-message" style="color: red"> proszę podać wiadomosć </small>
         <div style="text-align: center; display: block;">
-        <button placeholder="Wyślij" class="send-login-information">Wyślij</button>
+        <button placeholder="Wyślij" class="send-login-information-sur-chat">Wyślij</button>
         </div>
       </div> 
       <div class="input-bar-sur-chat">
@@ -81,13 +81,13 @@ const setFunctionsToForm = () => {
     this.chatArea = document.querySelector('.chat-area-sur-chat');
     this.name = document.querySelector('.input-area__name');
     this.address = document.querySelector('.input-area__address');
-    this.message = document.querySelector('.input-area__message');
+    this.message = document.querySelector('.input-area__message-sur-chat');
 
     this.firstVal = false;
     this.nextVal = false;
     this.thirdVal = false;
     
-    this.sendLoginInformation = document.querySelector('.send-login-information');
+    this.sendLoginInformation = document.querySelector('.send-login-information-sur-chat');
 
     setValidate(this.name, (element) => {
         if (element.value !== undefined && element.value.length > 3) {

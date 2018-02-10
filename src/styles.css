@@ -18,16 +18,6 @@
     height: 100px;
 }
 
-.container2 {
-    transition: 1s;
-    position: fixed;
-    bottom: -60px;
-    right: 328px;
-    background-color: aqua;
-    width: 320px;
-    height: 100px;
-}
-
 .animate-up-sur-chat {
     bottom: 242px
 }
@@ -56,7 +46,7 @@ input:placeholder, textarea:placeholder {
     font-weight: 400;
 }
 
-.input-area__message {
+.input-area__message-sur-chat {
     min-height: 50px;
 }
 
@@ -130,7 +120,7 @@ body {
 }
 
 
-.send-login-information {
+.send-login-information-sur-chat {
     width:  100px;
     height: 30px;
     background-color: green;
