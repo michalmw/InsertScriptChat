@@ -1,5 +1,5 @@
 import './styles.css'
-
+import { communication } from "./socket"
 // function component() {
 //   var element = document.createElement('div');
 
@@ -9,6 +9,14 @@ import './styles.css'
 
 //   return element;
 // }
+
+const con = communication('zniesmaczonyzbyszek.herokuapp.com')
+con.initMessages = initMessages => {
+    console.log(initMessages)
+}
+con.nextMessage = message => {
+    console.log(message)
+}
 
 let chatContainer = `
 <div class="container-sur-chat" id="elementMoving">
@@ -86,7 +94,7 @@ const setFunctionsToForm = () => {
     this.firstVal = false;
     this.nextVal = false;
     this.thirdVal = false;
-    
+
     this.sendLoginInformation = document.querySelector('.send-login-information-sur-chat');
 
     setValidate(this.name, (element) => {
@@ -136,7 +144,7 @@ const setFunctionsToChat = () => {
     this.typing = ''
     this.sendInput = document.querySelector('.send-input-sur-chat')
     this.fileManager = document.querySelector('.file-manager');
-    
+
     console.log(this.sendInput)
     this.sendInput.addEventListener('keypress', (key) => {
         this.typing = this.sendInput.value;
@@ -235,4 +243,3 @@ const movingElement = document.querySelector('#elementMoving');
 
 // console.log(style.getPropertyValue('--bars-color'));
 // console.log(style.getPropertyValue('--chat-area'));
-
