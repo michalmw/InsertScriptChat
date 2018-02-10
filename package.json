@@ -9,10 +9,12 @@
     "webpack": "^3.10.0"
   },
   "devDependencies": {
-    "css-loader": "^0.28.9"
+    "css-loader": "^0.28.9",
+    "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",

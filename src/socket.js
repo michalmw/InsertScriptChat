@@ -4,7 +4,7 @@ export function communication(address, gateId) {
 
     let nextMessage = () => { }
     let initMessages = () => { }
-    
+
     let ws = { send: () => { } }
     function send(message) {
         ws.send(message)
@@ -19,7 +19,8 @@ export function communication(address, gateId) {
         .then(() => {
             ws = new WebSocket(`ws://${address}?gateId=${gateId}`)
             ws.onmessage = (message) => {
-                const obj = JSON.parse(message)
+                console.log('raw message', message)
+                const obj = JSON.parse(message.data)
                 if (obj.type = 'init') {
                     initMessages(obj.messages)
                 } else if (obj.type === 'fromServer') {
