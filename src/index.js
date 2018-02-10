@@ -18,7 +18,7 @@ let chatContainer = `
 <div class="chat-area-sur-chat"></div>
 <div class="input-bar-sur-chat">
     <input type="file" placeholder="Plik" style="right:1" class="file-manager"></input>
-    <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input">
+    <input type="text" placeholder="wpisz tu i naciśnij enter" class="send-input-sur-chat">
 </div>
 </div>
 
@@ -31,7 +31,7 @@ let formContainer =
         <button class="">up</button>
       </div>
       <div class="chat-area-sur-chat">
-        <p class="left-message-text">
+        <p class="left-message-text-sur-chat">
           Wypełnij proszę poniższe pola, a my skontaktujemy się z Tobą tak szybko jak będzie to możliwe..
         </p>
         <input type="text" placeholder="nazwa" class="input-area__name">
@@ -134,7 +134,7 @@ const setFunctionsToForm = () => {
 
 const setFunctionsToChat = () => {
     this.typing = ''
-    this.sendInput = document.querySelector('.send-input')
+    this.sendInput = document.querySelector('.send-input-sur-chat')
     this.fileManager = document.querySelector('.file-manager');
     
     console.log(this.sendInput)
